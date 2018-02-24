@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/calendar/calendar",
+    "pages/index/index",
+    "pages/me/me"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/index.png",
+        "selectedIconPath": "assets/index_active.png"
+      },
+      {
+        "pagePath": "pages/calendar/calendar",
+        "text": "活动日历",
+        "iconPath": "assets/calendar.png",
+        "selectedIconPath": "assets/calendar_active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "assets/me.png",
+        "selectedIconPath": "assets/me_active.png"
+      }
+    ],
+    "color": "#555",
+    "backgroundColor": "#fff",
+    "selectedColor": "#08b09c",
+    "position": "bottom",
+    "borderStyle": "#c0c0c0"
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#04bd83",
+    "navigationBarTitleText": "体智能",
+    "navigationBarTextStyle":"#ffffff"
+  }
+}
