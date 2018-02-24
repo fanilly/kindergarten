@@ -31,6 +31,10 @@ page {
   font-size: 24rpx;
 }
 
+.f26 {
+  font-size: 26rpx;
+}
+
 .f28 {
   font-size: 28rpx;
 }
@@ -53,6 +57,14 @@ page {
 
 .f40 {
   font-size: 40rpx;
+}
+
+.f42 {
+  font-size: 42rpx;
+}
+
+.f60 {
+  font-size: 60rpx;
 }
 
 
@@ -86,14 +98,30 @@ page {
   color: #666;
 }
 
+.gray06 {
+  color: #b3c0c9;
+}
+
 .b-color {
   color: #546c84;
+}
+
+.w-color {
+  color: #fff;
+}
+
+.align-center {
+  text-align: center;
 }
 
 .ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.placeholder-box90 {
+  height: 90rpx;
 }
 
 
