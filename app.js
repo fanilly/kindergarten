@@ -34,6 +34,10 @@ App({
     // })
   },
   globalData: {
-    userInfo: null
+    userInfo: {
+      nickName: '卮言',
+      // avatarUrl: "https://wx.qlogo.cn/mmopen/vi_32/ywFvlKF6uhng0HAv4Aa53NHfrxStvT9ftibFCSeOP1zxmLq9iaTVSDgkCdtD3taQIGibibhMl03Xz08EDTy7f4w5rw/0"
+      avatarUrl: "../../assets/head.jpg"
+    }
   }
 });

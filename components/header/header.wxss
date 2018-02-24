@@ -1,0 +1,100 @@
+/* components/header/header.wxss */
+
+.header {
+  width: 100%;
+  position: relative;
+  height: 150rpx;
+  box-shadow: 0 4rpx 8rpx rgba(42,184,102,.6);
+}
+
+.header-bg {
+  width: 100%;
+  display: block;
+  height: 150rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.content {
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 22rpx 15rpx;
+}
+
+.lside {
+  flex: 1;
+  display: flex;
+}
+
+.info {
+	flex: 1;
+	padding-left: 15rpx;
+	padding-top: 20rpx;
+}
+
+.medal {
+  width: 140rpx;
+  text-align: center;
+  padding-top: 15rpx
+}
+
+.flag {
+  font-size: 24rpx;
+  color: #e6f18b;
+}
+
+.portrait {
+  width: 104rpx;
+  height: 106rpx;
+  position: relative;
+}
+
+.protrait-wapper {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  overflow: hidden;
+}
+
+.protrait-wapper image {
+  width: 100%;
+  height: 100%;
+}
+
+.deposit {
+  width: 41rpx;
+  height: 41rpx;
+  position: absolute;
+  right: 0;
+  bottom: -6rpx;
+}
+
+.username {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.id-box {
+	display: flex;
+	font-size: 24rpx;
+	color:#fff;
+	align-items: center;
+}
+
+.userid {
+	line-height: 30rpx;
+	padding-right: 10rpx;
+}
+
+.id-box image {
+	width: 36rpx;
+	height: 30rpx;
+	position: relative;
+	top: 5rpx;
+	margin-right: 6rpx;
+}

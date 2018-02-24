@@ -1,3 +1,6 @@
 {
-	"navigationBarTitleText": "活动日历"
+	"navigationBarTitleText": "活动日历",
+	"usingComponents":{
+    "header": "../../components/header/header"
+  }
 }

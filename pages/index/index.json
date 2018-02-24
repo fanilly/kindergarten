@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true,
+  "usingComponents":{
+    "header": "../../components/header/header"
+  }
+}
