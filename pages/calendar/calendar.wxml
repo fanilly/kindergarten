@@ -1,32 +1,37 @@
 <!-- 日历 -->
-<view class="flex box box-tb box-align-center">
-  <view class="calendar pink-color box box-tb">
-    <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+<view class="">
+  <view class="">
+    <!-- 日历头部 -->
+    <view class="calendar-header">
       <!-- 上一月 -->
-      <view class="prev box box-rl" bindtap="handleCalendar" data-handle="prev">
-        <view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
+      <view class="prev" bindtap="handleSwitchMonth" data-handle="prev">
+        <image src="../../assets/arrow_left.png" style="width:21rpx;height: 35rpx;"></image>
       </view>
       <!-- 日期选择器 -->
-      <view class="date-area box box-lr box-align-center box-pack-center">
-        <picker mode="date" fields="month" value="2018-11" start="{{startTime}}" bindchange="handleDateChange">
-          <view class="picker-time-text">
-            <text class="main-color fs34" style="padding-left: 10rpx;">{{curYear || "--"}} 年 {{curMonth || "--"}} 月</text>
+      <view class="current-date">
+        <picker mode="date" fields="month" value="{{curYear}}-{{curMonth}}" start="{{startTime}}" bindchange="handleDateChange">
+          <view>
+            <text class="main-color f40" style="padding-left: 10rpx;">{{curYear || "--"}} 年 {{curMonth<10?'0'+curMonth:curMonth}} 月</text>
           </view>
         </picker>
       </view>
       <!-- 下一月 -->
-      <view class="next box box-lr" bindtap="handleCalendar" data-handle="next">
-        <view class="next-handle box box-lr box-align-center box-pack-center">》</view>
+      <view class="next" bindtap="handleSwitchMonth" data-handle="next">
+        <image src="../../assets/arrow_right.png" style="width:21rpx;height: 35rpx;"></image>
       </view>
     </view>
-    <view class="weeks box box-lr box-pack-center box-align-center">
-      <view class="flex week fs28" wx:for="{{weeks}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
-    </view>
-    <view class="days box box-lr box-wrap">
-      <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+    <!-- 日历内容 -->
+    <view class="calendar-content">
+      <view class="clear-fix">
+        <view class="days f32 main-color" wx:for="{{weeks}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
       </view>
-      <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="tapDayItem">
-        <view class="fs28 day {{item.choosed ? 'border-radius pink-bg' : ''}} box box-align-center box-pack-center">{{item.day}}</view>
+      <view class="clear-fix">
+        <view wx:if="{{hasEmptyGrid}}" class="days" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}"> </view>
+        <view class="days f28 gray03" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="handleTapDayItem">
+          <view class="fs28 {{item.choosed ? 'border-radius pink-bg' : ''}}">{{item.day<10?'0'+item.day:item.day}} <view class="f24" wx:if="{{item.aa}}">未完成</view></view>
+          <!-- 在当天的位置显示标志 -->
+          <view wx:if="{{item.day==nowDay&&nowMonth==curMonth&&nowYear==curYear}}" class="pointer red-bg"></view>
+        </view>
       </view>
     </view>
   </view>

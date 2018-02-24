@@ -2,8 +2,11 @@ Page({
 
   data: {
     weeks: ['日', '一', '二', '三', '四', '五', '六'],
-    curYear: 0, //当前年份
-    curMonth: 0, //当前月份
+    nowYear: 0, //今天哪年
+    nowMonth: 0, //今天哪月
+    nowDay: 0, //今天哪天
+    curYear: 0, //当前选择年份
+    curMonth: 0, //当前选择月份
     hasEmptyGrid: false,
     showPicker: false
   },
@@ -12,20 +15,31 @@ Page({
   onLoad() {
     let date = new Date(),
       curYear = date.getFullYear(),
-      curMonth = date.getMonth() + 1;
+      curMonth = date.getMonth() + 1,
+      today = date.getDate();
 
     this.calculateEmptyGrids(curYear, curMonth);
     this.calculateDays(curYear, curMonth);
-    this.setData({ curYear, curMonth });
+    this.setData({
+      curYear,
+      curMonth,
+      nowYear: curYear,
+      nowMonth: curMonth,
+      nowDay: today
+    });
   },
+
   //获取当天
   getThisMonthDays(year, month) {
     return new Date(year, month, 0).getDate();
   },
+
   //获取第一天是星期几
   getFirstDayOfWeek(year, month) {
     return new Date(Date.UTC(year, month - 1, 1)).getDay();
   },
+
+  //计算当月一日之前需要空几格
   calculateEmptyGrids(year, month) {
     const firstDayOfWeek = this.getFirstDayOfWeek(year, month);
     let empytGrids = [];
@@ -44,6 +58,8 @@ Page({
       });
     }
   },
+
+  //计算当月的天数
   calculateDays(year, month) {
     let days = [];
 
@@ -56,17 +72,20 @@ Page({
       });
     }
 
-    this.setData({
-      days
-    });
+    this.setData({ days });
   },
-  handleCalendar(e) {
-    const handle = e.currentTarget.dataset.handle;
-    const curYear = this.data.curYear;
-    const curMonth = this.data.curMonth;
-    if (handle === 'prev') {
-      let newMonth = curMonth - 1;
-      let newYear = curYear;
+
+  //月份切换
+  handleSwitchMonth(e) {
+    let newMonth, newYear,
+      handle = e.currentTarget.dataset.handle, //标识 若为prev 上一月
+      curYear = this.data.curYear,
+      curMonth = this.data.curMonth;
+
+    if (handle === 'prev') { //上一月
+      newMonth = curMonth - 1;
+      newYear = curYear;
+
       if (newMonth < 1) {
         newYear = curYear - 1;
         newMonth = 12;
@@ -80,9 +99,10 @@ Page({
         curMonth: newMonth
       });
 
-    } else {
-      let newMonth = curMonth + 1;
-      let newYear = curYear;
+    } else { //下一月
+      newMonth = curMonth + 1;
+      newYear = curYear;
+
       if (newMonth > 12) {
         newYear = curYear + 1;
         newMonth = 1;
@@ -98,7 +118,9 @@ Page({
     }
   },
 
-  tapDayItem(e) {
+  //点击某一天
+  handleTapDayItem(e) {
+    console.log(this.data);
     const idx = e.currentTarget.dataset.idx;
     const days = this.data.days;
     days[idx].choosed = !days[idx].choosed;

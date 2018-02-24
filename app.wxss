@@ -18,31 +18,41 @@ page {
   box-sizing: border-box;
 }
 
+.clear-fix:before {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
 
 /*全局字号*/
 
-.fs24 {
+.f24 {
   font-size: 24rpx;
 }
 
-.fs28 {
+.f28 {
   font-size: 28rpx;
 }
 
-.fs30 {
+.f30 {
   font-size: 30rpx;
 }
 
-.fs32 {
+.f32 {
   font-size: 32rpx;
 }
 
-.fs34 {
+.f34 {
   font-size: 34rpx;
 }
 
-.fs36 {
+.f36 {
   font-size: 36rpx;
+}
+
+.f40 {
+  font-size: 40rpx;
 }
 
 
