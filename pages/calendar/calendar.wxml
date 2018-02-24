@@ -10,7 +10,7 @@
       <view class="date-area box box-lr box-align-center box-pack-center">
         <picker mode="date" fields="month" value="2018-11" start="{{startTime}}" bindchange="handleDateChange">
           <view class="picker-time-text">
-            <text style="padding-left: 10rpx;">{{curYear || "--"}} 年 {{curMonth || "--"}} 月</text>
+            <text class="main-color fs34" style="padding-left: 10rpx;">{{curYear || "--"}} 年 {{curMonth || "--"}} 月</text>
           </view>
         </picker>
       </view>
@@ -26,7 +26,7 @@
       <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
       </view>
       <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="tapDayItem">
-        <view class="day {{item.choosed ? 'border-radius pink-bg' : ''}} box box-align-center box-pack-center">{{item.day}}</view>
+        <view class="fs28 day {{item.choosed ? 'border-radius pink-bg' : ''}} box box-align-center box-pack-center">{{item.day}}</view>
       </view>
     </view>
   </view>

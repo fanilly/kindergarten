@@ -29,7 +29,7 @@
     "backgroundColor": "#fff",
     "selectedColor": "#08b09c",
     "position": "bottom",
-    "borderStyle": "#c0c0c0"
+    "borderStyle": "#e2e2e2"
   },
   "window":{
     "backgroundTextStyle":"light",

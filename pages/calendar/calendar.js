@@ -1,7 +1,3 @@
-let choose_year = null,
-  choose_month = null;
-
-
 Page({
 
   data: {
@@ -122,10 +118,6 @@ Page({
     this.calculateEmptyGrids(curYear, curMonth);
     this.calculateDays(curYear, curMonth);
 
-    this.setData({
-      showPicker: false,
-      curYear,
-      curMonth
-    });
+    this.setData({ showPicker: false, curYear, curMonth });
   }
 });
