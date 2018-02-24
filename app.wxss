@@ -89,3 +89,113 @@ page {
 .b-color {
   color: #546c84;
 }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/*order-list*/
+
+.order-list {
+  width: 100%;
+  height: 195rpx;
+  display: flex;
+  margin-top: 15rpx;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(153, 153, 153, .6);
+}
+
+.order-list .lside {
+  flex: 1;
+}
+
+.order-list .lside .header {
+  display: flex;
+  font-size: 30rpx;
+  color: #555555;
+  height: 34rpx;
+  padding: 18rpx;
+}
+
+.order-list .lside .header view:nth-child(1) {
+  flex: 1;
+  text-align: right;
+  padding: 0 15rpx;
+}
+
+.order-list .lside .header view:nth-child(2) {
+  width: 80rpx;
+}
+
+.order-list .lside .header view:nth-child(3) {
+  padding: 0 15rpx;
+  flex: 1;
+}
+
+.order-list .lside .flags {
+  display: flex;
+  color: #888;
+  font-size: 24rpx;
+  padding: 4rpx 15rpx 10rpx;
+}
+
+.order-list .lside .flags view {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.order-list .lside .flags view text {
+  padding-left: 8rpx;
+}
+
+.order-list .lside .address {
+  padding: 0 15rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #888;
+}
+
+.order-list .lside .address view:first-child {
+  width: 36rpx;
+}
+
+.order-list .lside .address view:last-child {
+  padding-left: 12rpx;
+  line-height: 32rpx;
+  flex: 1;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.order-list .rside {
+  width: 160rpx;
+  position: relative;
+}
+
+.parallelogram {
+  background-color: #fd6a70;
+  width: 200rpx;
+  height: 195rpx;
+  transform: skewX(-15deg) translateX(26rpx);
+  box-shadow: 0 0 8px rgba(153, 153, 153, .6);
+}
+
+.order-list .rside view:last-child {
+  width: 50rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 56rpx;
+  padding: 44rpx 28rpx 44rpx 0;
+}

@@ -33,7 +33,7 @@
 .info {
 	flex: 1;
 	padding-left: 15rpx;
-	padding-top: 20rpx;
+	padding-top: 26rpx;
 }
 
 .medal {
