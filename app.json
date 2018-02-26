@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/orderDetail/orderDetail",
     "pages/credit/credit",
     "pages/index/index",
     "pages/orderHistory/orderHistory",

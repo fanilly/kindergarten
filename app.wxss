@@ -246,19 +246,44 @@ page {
   margin: 0 auto;
   height: 88rpx;
   line-height: 88rpx;
+  position: relative;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border: 15rpx solid #ff5b62;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.c-title .triangle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: -30rpx;
 }
 
 .c-title text {
   font-size: 36rpx;
   color: #ff5b62;
 }
+
+.c-title text.f28 {
+  font-size: 30rpx;
+  color: #666;
+}
+
 .text-block {
   background-color: #fff;
   margin-top: 15rpx;
 }
+
 .tb-title {
   display: flex;
-  padding: 6rpx 15rpx;
+  padding: 12rpx 15rpx 6rpx;
   height: 50rpx;
   line-height: 50rpx;
   border-bottom: 1px solid #e2e2e2;
@@ -292,4 +317,55 @@ page {
 
 .tb-c-list {
   padding: 15rpx;
+}
+
+
+/*抢单*/
+
+.tb-btns {
+  width: 100%;
+  height: 180rpx;
+  background-color: #fff;
+  display: flex;
+}
+
+.tb-btns .tb-btns-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.tb-btns .tb-btns-item view:first-child {
+  padding-top: 42rpx;
+}
+
+.tb-btns .tb-btns-item view:nth-child(2) {
+  padding-top: 15rpx;
+}
+
+.tb-btns .tb-btns-item image {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c-order {
+  padding: 15rpx;
+  margin-top: 10rpx;
+}
+
+.c-order-item {
+  display: flex;
+  line-height: 40rpx;
+  padding-top: 15rpx;
+}
+
+.c-order-item>view:nth-child(1) {
+  width: 46rpx;
+}
+.c-order-item>view:nth-child(2) {
+  width: 150rpx;
+}
+.c-order-item>view:nth-child(3) {
+  flex: 1;
 }

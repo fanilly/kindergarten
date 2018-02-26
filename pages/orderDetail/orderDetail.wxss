@@ -1,0 +1,14 @@
+/* pages/orderDetail/orderDetail.wxss */
+.confirm-grab {
+	position: fixed;
+	bottom: 20rpx;
+	width:90%;
+	margin:0 auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	height: 80rpx;
+	line-height: 80rpx;
+	border-radius: 40rpx;
+	box-shadow: 0 0 20px #999;
+}

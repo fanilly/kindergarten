@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText":"抢单",
+	"usingComponents":{
+		"header":"../../components/header/header"
+	}
+}
