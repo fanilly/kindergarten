@@ -20,7 +20,7 @@
 <!-- 列表项 -->
 <view class="oh-wapper">
   <block wx:for="123456789" wx:key="{{index}}">
-    <navigator url="/" class="oh-list">
+    <navigator url="../orderHistoryDetail/orderHistoryDetail" class="oh-list">
       <view class="lside">
         <view class="oh-title f28 b-color">皮尔特沃夫
           <text class="f24">2018-02-04</text>

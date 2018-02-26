@@ -19,11 +19,11 @@
 				</view>
 			</view>
 		</view>
-		<navigator url="/" class="medal">
+		<navigator url="../rank/rank" class="medal">
 			<image src="../../assets/h_lv.png" style="width:55rpx;height:55rpx;"></image>
 			<view class="flag">三级教练</view>
 		</navigator>
-		<navigator url="/" class="medal">
+		<navigator url="../orderHistory/orderHistory" class="medal">
 			<image src="../../assets/h_order.png" style="width:55rpx;height:55rpx;"></image>
 			<view class="flag">已接999单</view>
 		</navigator>

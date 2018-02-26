@@ -1,13 +1,13 @@
 {
   "pages":[
+    "pages/index/index",
+    "pages/me/me",
     "pages/realNameCertification/realNameCertification",
     "pages/orderHistoryDetail/orderHistoryDetail",
     "pages/orderDetail/orderDetail",
     "pages/credit/credit",
-    "pages/index/index",
     "pages/orderHistory/orderHistory",
     "pages/rank/rank",
-    "pages/me/me",
     "pages/calendar/calendar",
     "components/theader/theader",
     "components/header/header"

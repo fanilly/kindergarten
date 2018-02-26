@@ -33,9 +33,9 @@
         </view>
       </view>
     </view>
-    <view class="rside">
+    <navigator hover-class="none" url="../orderDetail/orderDetail" class="rside">
       <view class="parallelogram"></view>
       <view>接单</view>
-    </view>
+    </navigator>
   </view>
 </block>

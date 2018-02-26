@@ -7,15 +7,15 @@ Page({
     btns:[{
       name:'已接单',
       value:99,
-      url:'/'
+      url:'../orderHistory/orderHistory'
     },{
       name:'教练等级',
       value:'III',
-      url:'/'
+      url:'../rank/rank'
     },{
       name:'诚信度',
       value:66,
-      url:'/'
+      url:'../credit/credit'
     },{
       name:'收益',
       value:99785,

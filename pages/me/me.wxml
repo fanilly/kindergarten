@@ -37,7 +37,7 @@
     <view class="f24 gray06">您还有两项未认证</view>
   </view>
   <view class="info-content">
-    <navigator url="/" hover-class="none">
+    <navigator url="../realNameCertification/realNameCertification" hover-class="none">
       <image src="../../assets/me_icon03.png" style="width:100rpx;height: 91rpx;"></image>
       <view class="f26 gray03 align-center">实名认证</view>
       <view class="f24 gray06 align-center">已完成</view>
@@ -64,17 +64,17 @@
     <view class="f24 gray06">点击查看历史评价信息</view>
   </view>
   <view class="evaluation-content">
-    <navigator url="/" hover-class="none">
+    <navigator url="../orderHistory/orderHistory" hover-class="none">
       <image src="../../assets/me_icon06.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
       <view class="f28 main-color align-center">666</view>
       <image  src="../../assets/line.png" class="line"></image>
     </navigator>
-    <navigator url="/" hover-class="none">
+    <navigator url="../orderHistory/orderHistory" hover-class="none">
       <view class="f60 b-color align-center mt46">98%</view>
       <view class="f24 gray06 align-center">综合满意度</view>
       <image class="line" src="../../assets/line.png"></image>
     </navigator>
-    <navigator url="/" hover-class="none">
+    <navigator url="../orderHistory/orderHistory" hover-class="none">
       <image src="../../assets/me_icon07.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
       <view class="f28 red-color align-center">12</view>
     </navigator>
