@@ -1,0 +1,106 @@
+/* pages/orderHistory/orderHistory.wxss */
+
+.header {
+  height: 180rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 10rpx #999;
+  z-index: 1000;
+}
+
+.evaluation-content {
+  display: flex;
+  text-align: center;
+  background-color: #fff;
+  height: 180rpx;
+}
+
+.evaluation-content>navigator {
+  flex: 1;
+  position: relative;
+  height: 180rpx;
+}
+
+.mt46 {
+  margin-top: 30rpx;
+}
+
+.line {
+  width: 2rpx;
+  height: 180rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+/*list*/
+.oh-wapper {
+	margin-top: 180rpx;
+}
+.oh-list {
+  display: flex;
+  padding: 15rpx;
+  background-color: #fff;
+  margin-top: 15rpx;
+  height: 90rpx;
+}
+
+.oh-list .lside {
+  flex: 1;
+}
+
+.oh-list .rside {
+  width: 150rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 50rpx;
+}
+
+.oh-list .rside view:nth-child(1),
+.oh-list .rside view:nth-child(3) {
+  flex: 1;
+}
+
+.oh-list .rside view:nth-child(2) {
+  width: 80rpx;
+  text-align: center;
+  position: relative;
+  top: -4rpx;
+}
+
+.oh-title {
+  padding-left: 5rpx;
+  padding-top: 10rpx;
+}
+
+.oh-title text {
+  color: #b3c0c9;
+}
+
+.oh-content {
+  display: flex;
+  color: #888;
+  font-size: 24rpx;
+  padding: 10rpx 0 0;
+}
+
+.oh-content view {
+  display: flex;
+  align-items: center;
+}
+
+.oh-content view:nth-child(1),
+.oh-content view:nth-child(2) {
+  flex: 1;
+}
+
+.oh-content view:last-child {
+  width: 200rpx;
+}
+
+.oh-content view text {
+  padding-left: 8rpx;
+}

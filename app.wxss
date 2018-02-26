@@ -134,6 +134,7 @@ page {
   margin-top: 15rpx;
   background-color: #fff;
   box-shadow: 0 0 8px rgba(153, 153, 153, .6);
+  overflow-x: hidden;
 }
 
 .order-list .lside {

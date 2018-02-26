@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/index/index",
+    "pages/orderHistory/orderHistory",
     "pages/rank/rank",
     "pages/me/me",
-    "pages/index/index",
     "pages/calendar/calendar",
     "components/theader/theader",
     "components/header/header"
