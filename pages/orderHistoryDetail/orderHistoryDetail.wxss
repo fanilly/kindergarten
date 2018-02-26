@@ -1,0 +1,6 @@
+/* pages/orderHistoryDetail/orderHistoryDetail.wxss */
+.is-component {
+	position: absolute;
+	right: 50rpx;
+	top:0;
+}

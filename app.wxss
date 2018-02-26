@@ -352,6 +352,7 @@ page {
 .c-order {
   padding: 15rpx;
   margin-top: 10rpx;
+  position: relative;
 }
 
 .c-order-item {
