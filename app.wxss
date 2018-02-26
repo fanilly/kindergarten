@@ -227,3 +227,64 @@ page {
   line-height: 56rpx;
   padding: 44rpx 28rpx 44rpx 0;
 }
+
+
+/*内容页样式*/
+
+.c-header {
+  background-color: #fff;
+}
+
+.c-title {
+  font-size: 32rpx;
+  color: #546c84;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #ff5b62;
+  width: 66%;
+  margin: 0 auto;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.c-title text {
+  font-size: 36rpx;
+  color: #ff5b62;
+}
+.text-block {
+  background-color: #fff;
+  margin-top: 15rpx;
+}
+.tb-title {
+  display: flex;
+  padding: 6rpx 15rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.tb-title>view:nth-child(1) {
+  width: 44rpx;
+}
+
+.tb-title>view:nth-child(2) {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #555555;
+}
+
+.tb-title>view:nth-child(3) {
+  flex: 1;
+  text-align: right;
+  font-size: 24rpx;
+  color: #ff5b62;
+}
+
+.tb-content {
+  font-size: 24rpx;
+  color: #666;
+  text-indent: 2em;
+  padding: 15rpx;
+  line-height: 40rpx;
+  text-align: justify;
+}

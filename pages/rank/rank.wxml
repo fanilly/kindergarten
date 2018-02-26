@@ -1,0 +1,43 @@
+<!--pages/rank/rank.wxml-->
+<theader></theader>
+<view class="c-header">
+  <view class="c-title">
+    教练等级：
+    <image src="../../assets/c_icon01.png" style="height: 36rpx;width:36rpx;vertical-align: middle;display: inline-block;position: relative;top:-6rpx"></image>
+    <text>3</text>
+  </view>
+  <view class="text-block">
+    <view class="tb-title">
+      <view>
+        <image src="../../assets/c_icon05.png" style="width: 36rpx;height: 36rpx;position: relative;top:4rpx;"></image>
+      </view>
+      <view>
+        等级加成
+      </view>
+      <view>
+        <image src="../../assets/c_icon02.png" style="width:36rpx;height:36rpx;display: inline-block;vertical-align: middle;position: relative;top:-4rpx;"></image>
+        努力提升教练等级，收获满满哦
+      </view>
+    </view>
+    <view class="tb-content">
+      一级教练加成：每个孩子收益增加5元；二级教练加成：每个孩子收益增加3元；三级教练加成：每个孩子收益增加2元；四级教练加成：每个孩子收益增加1元；五级教练加成：每个孩子收益增加0.5元
+    </view>
+  </view>
+</view>
+<view class="text-block">
+  <view class="tb-title">
+    <view>
+      <image src="../../assets/c_icon04.png" style="width: 36rpx;height: 36rpx;position: relative;top:4rpx;"></image>
+    </view>
+    <view>
+      升级条件
+    </view>
+    <view>
+      <image src="../../assets/c_icon03.png" style="width:36rpx;height:36rpx;display: inline-block;vertical-align: middle;position: relative;top:-4rpx;"></image>
+      可以通过培训快速提升等级哦
+    </view>
+  </view>
+  <view class="tb-content">
+    五级教练：接单量达到0单，完善基础信息认证，综合满意度达到50%；四级教练：接单量达到100单，完善基础信息认证，综合满意度达到60%；三级教练：接单量达到500单，完善基础信息认证，综合满意度达到70%；二级教练：接单量达到1000单，完善基础信息认证，综合满意度达到80%；一级教练：接单量达到2000单，完善基础信息认证，综合满意度达到90%。
+  </view>
+</view>

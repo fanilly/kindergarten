@@ -1,0 +1,17 @@
+<!--components/theader/theader.wxml-->
+<!-- 头部 -->
+<view class="header">
+  <image class="header-bg" src="../../assets/me_bg.png"></image>
+  <view class="header-content">
+    <view class="portrait">
+      <view class="protrait-wapper">
+        <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      </view>
+      <image class="deposit" src="../../assets/deposited.png"></image>
+    </view>
+    <view class="info">
+      <view class="f28 w-color align-center">{{userInfo.nickName}}</view>
+      <view class="f24 w-color align-center">ID:5206626</view>
+    </view>
+  </view>
+</view>

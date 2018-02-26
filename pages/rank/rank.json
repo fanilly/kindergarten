@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText":"等级",
+	"usingComponents":{
+		"theader":"../../components/theader/theader"
+	}
+}
