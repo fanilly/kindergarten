@@ -110,6 +110,10 @@ page {
   color: #fff;
 }
 
+.y-color {
+  color: #e6f18b;
+}
+
 .align-center {
   text-align: center;
 }
@@ -364,9 +368,11 @@ page {
 .c-order-item>view:nth-child(1) {
   width: 46rpx;
 }
+
 .c-order-item>view:nth-child(2) {
   width: 150rpx;
 }
+
 .c-order-item>view:nth-child(3) {
   flex: 1;
 }

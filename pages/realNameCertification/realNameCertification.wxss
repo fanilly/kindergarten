@@ -1,0 +1,135 @@
+/* pages/realNameCertification/realNameCertification.wxss */
+
+.certification-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.cer-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  position: relative;
+}
+
+.wapper {
+  padding-top: 36rpx;
+}
+
+.portrait {
+  width: 212rpx;
+  height: 212rpx;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 102rpx;
+  overflow: hidden;
+}
+
+.protrait-wapper {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 6rpx solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.protrait-msg {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba(0, 175, 153, .8);
+  width: 100%;
+  font-size: 24rpx;
+  color: #fff;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-bottom: 8rpx;
+}
+
+.protrait-wapper image {
+  width: 100%;
+  height: 100%;
+}
+
+
+/*表单内容*/
+
+.inputs-wapper {
+  padding: 30rpx;
+}
+
+.inputs-item {
+  display: flex;
+  border-bottom: 1px solid #dee5e9;
+  color: #fff;
+  margin-top: 36rpx;
+  height: 52rpx;
+  align-items: center;
+  position: relative;
+}
+
+.inputs-item view:first-child {
+  width: 50rpx;
+}
+
+.inputs-item>view:last-child {
+  flex: 1;
+}
+
+.inputs-item input {
+  width: 100%;
+}
+
+.get-vercode {
+  width: 220rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  background-color: #546c84;
+  border-radius: 25rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: -6rpx;
+  z-index: 1500;
+}
+
+.self-introduction {
+  width: 100%;
+  height: 240rpx;
+  background-color: rgba(84, 108, 132, .4);
+  border-radius: 12rpx;
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  padding: 15rpx;
+  box-sizing: border-box;
+  line-height: 40rpx;
+  color: #fff;
+}
+
+.agreement {
+  margin-top: 24rpx;
+}
+
+.agreement navigator {
+  display: inline-block;
+}
+
+.subbtn {
+  margin-top: 60rpx;
+  height: 80rpx;
+  background-image: linear-gradient(to right, #0eaf9c, #00ad99);
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 0 40rpx rgba(54, 138, 132, .75);
+  line-height: 80rpx;
+}

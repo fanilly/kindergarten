@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/realNameCertification/realNameCertification",
     "pages/orderHistoryDetail/orderHistoryDetail",
     "pages/orderDetail/orderDetail",
     "pages/credit/credit",
