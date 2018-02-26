@@ -1,0 +1,45 @@
+<!--pages/credit/credit.wxml-->
+<theader></theader>
+<view class="c-header">
+  <view class="c-title">
+    诚信度：
+    <image src="../../assets/c_icon06.png" style="height: 36rpx;width:36rpx;vertical-align: middle;display: inline-block;position: relative;top:-6rpx"></image>
+    <text>66</text>
+  </view>
+  <view class="text-block">
+    <view class="tb-title">
+      <view>
+        <image src="../../assets/c_icon05.png" style="width: 36rpx;height: 36rpx;position: relative;top:4rpx;"></image>
+      </view>
+      <view>
+        诚信度加成
+      </view>
+      <view>
+        <image src="../../assets/c_icon02.png" style="width:36rpx;height:36rpx;display: inline-block;vertical-align: middle;position: relative;top:-4rpx;"></image>
+        努力提升诚信度，收获满满哦
+      </view>
+    </view>
+    <view class="tb-content">
+      诚信度达到 100，每带领一个孩子受益增加 2 元；诚信度达到80，每带领一个孩子受益增加 1 元；诚信度达到 60，每带领一个孩子受益增加 0.5 元.5元
+    </view>
+  </view>
+</view>
+<view class="text-block">
+  <view class="tb-title">
+    <view>
+      <image src="../../assets/c_icon04.png" style="width: 36rpx;height: 36rpx;position: relative;top:4rpx;"></image>
+    </view>
+    <view>
+      诚信度说明
+    </view>
+    <view></view>
+  </view>
+  <view class="tb-content">
+    诚信度是代表使用者对接单后执行情况的量化指标，作为平台为用户提供相关数据推荐的举出指标，诚信度的增加与减少标准如下：
+    <view class="tb-c-list">
+      <view>每完成 5 单，诚信度增加 1 点。</view>
+      <view>每违约 1 单，诚信度降低 1 点。</view>
+      <view>每退单 1 单，诚信度降低 1 点。</view>
+    </view>
+  </view>
+</view>

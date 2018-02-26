@@ -289,3 +289,7 @@ page {
   line-height: 40rpx;
   text-align: justify;
 }
+
+.tb-c-list {
+  padding: 15rpx;
+}

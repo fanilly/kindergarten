@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText":"诚信度",
+	"usingComponents":{
+		"theader":"../../components/theader/theader"
+	}
+}
