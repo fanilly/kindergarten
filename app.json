@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/resumeCertification/resumeCertification",
     "pages/index/index",
+    "pages/addResume/addResume",
+    "pages/resumeCertification/resumeCertification",
     "pages/diplomaCertification/diplomaCertification",
     "pages/me/me",
     "pages/realNameCertification/realNameCertification",

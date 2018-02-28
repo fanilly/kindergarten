@@ -14,5 +14,5 @@
     <view class="edit main-color f28">
       <image src="../../assets/edit.png" style="width:21rpx;height: 22rpx;margin-right: 10rpx;"></image>编辑</view>
   </view>
-  <view class="public-subbtn">添加更多工作经历</view>
+  <view class="public-subbtn" bindtap="handleAddResume">添加更多工作经历</view>
 </view>

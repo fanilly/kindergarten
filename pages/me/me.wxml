@@ -47,7 +47,7 @@
       <view class="f26 gray03 align-center">学历认证</view>
       <view class="f24 gray06 align-center">未完成</view>
     </navigator>
-    <navigator url="/" hover-class="none">
+    <navigator url="../resumeCertification/resumeCertification" hover-class="none">
       <image src="../../assets/me_icon05.png" style="width:100rpx;height: 91rpx;"></image>
       <view class="f26 gray03 align-center">履历认证</view>
       <view class="f24 gray06 align-center">未完成</view>

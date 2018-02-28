@@ -1,0 +1,5 @@
+/* pages/addResume/addResume.wxss */
+
+page {
+  background-color: #fff;
+}
