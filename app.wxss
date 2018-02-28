@@ -467,6 +467,6 @@ page {
   line-height: 80rpx;
   color:#fff;
   background-image: linear-gradient(to right, #0eaf9c, #00ad99);
-  border-radius: 40rpx;
+  border-radius: 10rpx;
   box-shadow: 0 0 12px #ccc;
 }

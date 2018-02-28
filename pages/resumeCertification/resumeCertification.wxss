@@ -1,0 +1,41 @@
+/* pages/resumeCertification/resumeCertification.wxss */
+
+.wapper {
+  width: 100%;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+}
+
+.resume-item {
+  width: 100%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-top: 15rpx;
+}
+
+.cycle {
+  line-height: 40rpx;
+}
+
+.title {
+  padding: 6rpx 0;
+  line-height: 40rpx;
+}
+
+.content {
+  line-height: 40rpx;
+}
+
+.edit {
+  position: absolute;
+  right: 15rpx;
+  top: 15rpx;
+}
+
+.public-subbtn {
+  margin-top: 20rpx;
+  width: 100%;
+}
