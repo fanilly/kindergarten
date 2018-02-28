@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/diplomaCertification/diplomaCertification",
     "pages/index/index",
     "pages/me/me",
     "pages/realNameCertification/realNameCertification",

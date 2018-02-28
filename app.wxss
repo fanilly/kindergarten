@@ -1,7 +1,7 @@
 /**app.wxss**/
 
 page {
-  background-color: #ebebeb;
+  background-color: #eff3f6;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -128,6 +128,9 @@ page {
   height: 90rpx;
 }
 
+.placeholder-box50 {
+  height: 50rpx;
+}
 
 /*order-list*/
 
@@ -375,4 +378,95 @@ page {
 
 .c-order-item>view:nth-child(3) {
   flex: 1;
+}
+
+
+/*信息认证表单*/
+
+.cer-item-wapper {
+  height: 40rpx;
+  padding: 30rpx 15rpx;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+}
+
+.cer-icon-wapper {
+  width: 55rpx;
+}
+
+.cer-icon-wapper image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.cer-title-wapper {
+  font-size: 32rpx;
+  color: #353535;
+  line-height: 42rpx;
+  padding-right: 15rpx;
+}
+
+.cer-input-wapper {
+  flex: 1;
+  font-size: 32rpx;
+  color: #353535;
+  line-height: 42rpx;
+}
+
+.cer-input-wapper .picker-content text {
+  padding-right: 20rpx;
+}
+/*文本域*/
+.cer-textarea-title {
+  display: flex;
+  height: 40rpx;
+  font-size: 32rpx;
+  color: #555;
+  line-height: 42rpx;
+  padding:20rpx 15rpx;
+}
+
+.cer-textarea-title view:first-child {
+  width: 55rpx;
+}
+
+.cer-textarea-title view:first-child image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.cer-textarea-content {
+  height: 300rpx;
+  background-color: #f7f7f7;
+  font-size: 32rpx;
+  color: #353535;
+  position: relative;
+}
+
+.cer-textarea-content textarea {
+  width:100%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  height: 300rpx;
+}
+
+.count-num-wapper {
+  position: absolute;
+  right: 15rpx;
+  bottom: 15rpx;
+  font-size: 28rpx;
+  color: #b3c0c9;
+}
+
+.public-subbtn {
+  font-size: 32rpx;
+  text-align: center;
+  width: 96%;
+  margin:50rpx auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#fff;
+  background-image: linear-gradient(to right, #0eaf9c, #00ad99);
+  border-radius: 40rpx;
+  box-shadow: 0 0 12px #ccc;
 }

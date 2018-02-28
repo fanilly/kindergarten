@@ -1,0 +1,4 @@
+/* pages/diplomaCertification/diplomaCertification.wxss */
+page {
+	background-color: #fff;
+}
