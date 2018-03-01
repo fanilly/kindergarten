@@ -1,12 +1,14 @@
 {
   "pages":[
+    "pages/me/me",
     "pages/index/index",
     "pages/addResume/addResume",
+    
     "pages/resumeCertification/resumeCertification",
     "pages/diplomaCertification/diplomaCertification",
-    "pages/me/me",
     "pages/realNameCertification/realNameCertification",
     "pages/orderHistoryDetail/orderHistoryDetail",
+
     "pages/orderDetail/orderDetail",
     "pages/credit/credit",
     "pages/orderHistory/orderHistory",

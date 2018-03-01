@@ -1,82 +1,115 @@
 <!--pages/me/me.wxml-->
-<!-- 头部 -->
-<view class="header">
-  <image class="header-bg" src="../../assets/me_bg.png"></image>
-  <view class="header-content">
-    <view class="portrait">
-      <view class="protrait-wapper">
-        <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+<class class="wapper">
+  <!-- 头部 -->
+  <view class="header">
+    <image class="header-bg" src="../../assets/me_bg.png"></image>
+    <view class="header-content">
+      <view class="portrait">
+        <view class="protrait-wapper">
+          <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+        </view>
+        <image class="deposit" src="../../assets/deposited.png"></image>
       </view>
-      <image class="deposit" src="../../assets/deposited.png"></image>
-    </view>
-    <view class="info">
-      <view class="f28 w-color align-center">{{userInfo.nickName}}</view>
-      <view class="f24 w-color align-center">ID:5206626</view>
-    </view>
-    <view class="btns-wapper">
-      <view class="btns">
-        <block wx:for="{{btns}}" wx:key="{{index}}">
-          <navigator url="{{item.url}}">
-            <view class="f42 main-color">{{item.value}}</view>
-            <view class="f28 gray06">{{item.name}}</view>
-            <image wx:if="{{index!=btns.length-1}}" src="../../assets/line.png" style="width:2rpx;height: 180rpx;"></image>
-          </navigator>
-        </block>
+      <view class="info">
+        <view class="f28 w-color align-center">{{userInfo.nickName}}</view>
+        <view class="f24 w-color align-center">ID:5206626</view>
+      </view>
+      <view class="btns-wapper">
+        <view class="btns">
+          <block wx:for="{{btns}}" wx:key="{{index}}">
+            <navigator url="{{item.url}}">
+              <view class="f42 main-color">{{item.value}}</view>
+              <view class="f28 gray06">{{item.name}}</view>
+              <image wx:if="{{index!=btns.length-1}}" src="../../assets/line.png" style="width:2rpx;height: 180rpx;"></image>
+            </navigator>
+          </block>
+        </view>
       </view>
     </view>
   </view>
-</view>
-<!-- 信息认证 -->
-<view class="placeholder-box90"></view>
-<view class="info-authentication">
-  <view class="info-title">
-    <view>
-      <image src="../../assets/me_icon01.png" style="width:36rpx;height: 36rpx;margin-top:15rpx;"></image>
+  <!-- 信息认证 -->
+  <view class="placeholder-box90"></view>
+  <view class="info-authentication">
+    <view class="info-title">
+      <view>
+        <image src="../../assets/me_icon01.png" style="width:36rpx;height: 36rpx;margin-top:15rpx;"></image>
+      </view>
+      <view class="f28 gray02">信息认证</view>
+      <view class="f24 gray06">您还有两项未认证</view>
     </view>
-    <view class="f28 gray02">信息认证</view>
-    <view class="f24 gray06">您还有两项未认证</view>
-  </view>
-  <view class="info-content">
-    <navigator url="../realNameCertification/realNameCertification" hover-class="none">
-      <image src="../../assets/me_icon03.png" style="width:100rpx;height: 91rpx;"></image>
-      <view class="f26 gray03 align-center">实名认证</view>
-      <view class="f24 gray06 align-center">已完成</view>
-    </navigator>
-    <navigator url="../diplomaCertification/diplomaCertification" hover-class="none">
-      <image src="../../assets/me_icon04.png" style="width:100rpx;height: 91rpx;"></image>
-      <view class="f26 gray03 align-center">学历认证</view>
-      <view class="f24 gray06 align-center">未完成</view>
-    </navigator>
-    <navigator url="../resumeCertification/resumeCertification" hover-class="none">
-      <image src="../../assets/me_icon05.png" style="width:100rpx;height: 91rpx;"></image>
-      <view class="f26 gray03 align-center">履历认证</view>
-      <view class="f24 gray06 align-center">未完成</view>
-    </navigator>
-  </view>
-</view>
-<!-- 客户评价 -->
-<view class="info-authentication">
-  <view class="info-title">
-    <view>
-      <image src="../../assets/me_icon02.png" style="width:36rpx;height: 36rpx;margin-top:15rpx;"></image>
+    <view class="info-content">
+      <navigator url="../realNameCertification/realNameCertification" hover-class="none">
+        <image src="../../assets/me_icon03.png" style="width:100rpx;height: 91rpx;"></image>
+        <view class="f26 gray03 align-center">实名认证</view>
+        <view class="f24 gray06 align-center">已完成</view>
+      </navigator>
+      <navigator url="../diplomaCertification/diplomaCertification" hover-class="none">
+        <image src="../../assets/me_icon04.png" style="width:100rpx;height: 91rpx;"></image>
+        <view class="f26 gray03 align-center">学历认证</view>
+        <view class="f24 gray06 align-center">未完成</view>
+      </navigator>
+      <navigator url="../resumeCertification/resumeCertification" hover-class="none">
+        <image src="../../assets/me_icon05.png" style="width:100rpx;height: 91rpx;"></image>
+        <view class="f26 gray03 align-center">履历认证</view>
+        <view class="f24 gray06 align-center">未完成</view>
+      </navigator>
     </view>
-    <view class="f28 gray02">客户评价</view>
-    <view class="f24 gray06">点击查看历史评价信息</view>
   </view>
-  <view class="evaluation-content">
-    <navigator url="../orderHistory/orderHistory" hover-class="none">
-      <image src="../../assets/me_icon06.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
-      <view class="f28 main-color align-center">666</view>
-      <image  src="../../assets/line.png" class="line"></image>
+  <!-- 客户评价 -->
+  <view class="info-authentication">
+    <view class="info-title">
+      <view>
+        <image src="../../assets/me_icon02.png" style="width:36rpx;height: 36rpx;margin-top:15rpx;"></image>
+      </view>
+      <view class="f28 gray02">客户评价</view>
+      <view class="f24 gray06">点击查看历史评价信息</view>
+    </view>
+    <view class="evaluation-content">
+      <navigator url="../orderHistory/orderHistory" hover-class="none">
+        <image src="../../assets/me_icon06.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
+        <view class="f28 main-color align-center">666</view>
+        <image src="../../assets/line.png" class="line"></image>
+      </navigator>
+      <navigator url="../orderHistory/orderHistory" hover-class="none">
+        <view class="f60 b-color align-center mt46">98%</view>
+        <view class="f24 gray06 align-center">综合满意度</view>
+        <image class="line" src="../../assets/line.png"></image>
+      </navigator>
+      <navigator url="../orderHistory/orderHistory" hover-class="none">
+        <image src="../../assets/me_icon07.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
+        <view class="f28 red-color align-center">12</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class="list-wapper">
+    <navigator url="" class="list-item">
+      <view>
+        <image src="../../assets/deposited.png" style="width:36rpx;height: 36rpx;"></image>
+      </view>
+      <view class="f28 gray02">我的押金</view>
+      <view>
+        <text class="f24 gray06">已缴</text>
+        <image src="../../assets/arrow.png" style="width: 25rpx;height: 36rpx;"></image>
+      </view>
     </navigator>
-    <navigator url="../orderHistory/orderHistory" hover-class="none">
-      <view class="f60 b-color align-center mt46">98%</view>
-      <view class="f24 gray06 align-center">综合满意度</view>
-      <image class="line" src="../../assets/line.png"></image>
+    <navigator url="" class="list-item">
+      <view>
+        <image src="../../assets/phone.png" style="width:36rpx;height: 36rpx;"></image>
+      </view>
+      <view class="f28 gray02">联系我们</view>
+      <view>
+        <image src="../../assets/arrow.png" style="width: 25rpx;height: 36rpx;"></image>
+      </view>
     </navigator>
-    <navigator url="../orderHistory/orderHistory" hover-class="none">
-      <image src="../../assets/me_icon07.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
-      <view class="f28 red-color align-center">12</view>
+    <navigator url="" class="list-item">
+      <view>
+        <image src="../../assets/about.png" style="width:36rpx;height: 36rpx;"></image>
+      </view>
+      <view class="f28 gray02">关于我们</view>
+      <view>
+        <image src="../../assets/arrow.png" style="width: 25rpx;height: 36rpx;"></image>
+      </view>
     </navigator>
   </view>
-</view>
+</class>

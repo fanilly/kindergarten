@@ -106,7 +106,7 @@
   display: flex;
   padding: 0 15rpx;
   line-height: 66rpx;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid #eff3f6;
   align-items: center;
 }
 
@@ -155,4 +155,38 @@
   position: absolute;
   right: 0;
   top:15rpx;
+}
+
+.list-wapper {
+  margin: 15rpx 0;
+  background-color: #fff;
+  padding:0 15rpx;
+}
+
+.list-item {
+  height: 36rpx;
+  padding: 22rpx 0;
+  display: flex;
+  border-bottom: 1px solid #eff3f6;
+  align-items: center;
+}
+
+.list-wapper .list-item:last-child{
+  border-bottom: 0
+}
+
+.list-item view:nth-child(1){
+  width: 50rpx;
+}
+
+.list-item view:nth-child(2){
+  flex: 1;
+}
+
+.list-item view:nth-child(3){
+  display: flex;
+  align-items: center;
+}
+.list-item view:nth-child(3) text {
+  padding-right: 15rpx;
 }
