@@ -8,7 +8,7 @@
         <view class="protrait-wapper">
           <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
         </view>
-        <image class="deposit" src="../../assets/deposited.png"></image>
+        <image class="deposit" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
       </view>
       <view class="info">
         <view class="f28 w-color align-center">{{userInfo.nickName}}</view>
@@ -83,7 +83,7 @@
   </view>
   <!-- 列表 -->
   <view class="list-wapper">
-    <navigator url="" class="list-item">
+    <navigator url="../deposit/deposit" class="list-item">
       <view>
         <image src="../../assets/deposited.png" style="width:36rpx;height: 36rpx;"></image>
       </view>

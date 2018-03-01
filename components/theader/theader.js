@@ -1,13 +1,17 @@
 // components/theader/theader.js
 const app = getApp();
 Component({
-  properties:{
+  properties: {
 
   },
-  data:{
-    userInfo:app.globalData.userInfo
+  data: {
+    userInfo: app.globalData.userInfo
   },
-  methods:{
-
+  methods: {
+    handleGoToDeposit() {
+      wx.navigateTo({
+        url: '../deposit/deposit'
+      });
+    }
   }
 });

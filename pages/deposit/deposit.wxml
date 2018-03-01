@@ -1,0 +1,44 @@
+<!--pages/deposit/deposit.wxml-->
+<view class="wapper">
+  <view class="header">
+    <image src="../../assets/m_header.png" class="header-bg"></image>
+    <view class="header-content align-center">
+      <view class="money">
+        <text class="f28">￥</text>289.00
+        <text class="f26">元</text>
+      </view>
+      <view class="info f28 y-color">{{deposit?'已':'需'}}支付押金</view>
+      <view class="button" bindtap="handlePaymentOrReturn">{{deposit?'退还押金':'确认支付'}}</view>
+    </view>
+  </view>
+  <view class="remark gray06 f26">注：点击支付暨表示已阅读并同意
+    <navigator class="red-color">《押金缴纳规则》</navigator>
+  </view>
+  <view class="text-content">
+    <view class="f32 gray01 title">一、为什么要缴纳押金？</view>
+    <view class="f26 gray03 long-text">手中雕刻生花 刀锋千转蜿蜒成画 盛名功德塔 是桥畔某处人家 春风绕过发梢红纱 刺绣赠他 眉目刚烈拟作妆嫁 轰烈流沙枕上白发 杯中酒比划 年少风雅鲜衣怒马 也不过一刹那 难免疏漏儿时檐下 莫测变化 隔却山海 转身 从容煎茶</view>
+    <view class="f32 gray01 title">二、押金中包含哪些项目？？</view>
+    <view class="f26 gray03">1. 手中雕刻生花 刀锋千转蜿蜒成画</view>
+    <view class="f26 gray03">2. 盛名功德塔 是桥畔某处人家</view>
+    <view class="f26 gray03">3. 春风绕过发梢红纱 刺绣赠他</view>
+    <view class="f26 gray03">4. 眉目刚烈拟作妆嫁</view>
+    <view class="f26 gray03">5. 轰烈流沙枕上白发 杯中酒比划</view>
+    <view class="f26 gray03">6. 年少风雅鲜衣怒马 也不过一刹那</view>
+    <view class="f32 gray01 title">三、押金退还多久到账？</view>
+    <view class="f26 gray03 long-text">手中雕刻生花 刀锋千转蜿蜒成画 盛名功德塔 是桥畔某处人家 春风绕过发梢红纱 刺绣赠他 眉目刚烈拟作妆嫁 轰烈流沙枕上白发 杯中酒比划 年少风雅鲜衣怒马 也不过一刹那 难免疏漏儿时檐下 莫测变化 隔却山海 转身 从容煎茶</view>
+  </view>
+</view>
+<view class="mask" style="opacity: {{mask.opacity}};display: {{mask.display}};"></view>
+<view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+  <view class="img-wapper">
+    <image src="../../assets/unhappy.png" style="width: 206rpx;height: 206rpx;"></image>
+  </view>
+  <view class="align-center f36 b-color r-title">退还押金无法抢单</view>
+  <view class="align-center f28 gray06">退还押金会在48小时之内打入您的账户</view>
+  <view class="line"></view>
+  <view class="btn btn-return">退还押金</view>
+  <view class="btn">继续抢单</view>
+  <view class="close" bindtap="handleClosePopup">
+    <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+  </view>
+</view>

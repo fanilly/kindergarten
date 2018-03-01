@@ -7,7 +7,7 @@
       <view class="protrait-wapper">
         <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
       </view>
-      <image class="deposit" src="../../assets/deposited.png"></image>
+      <image class="deposit" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
     </view>
     <view class="info">
       <view class="f28 w-color align-center">{{userInfo.nickName}}</view>

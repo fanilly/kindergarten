@@ -1,0 +1,140 @@
+/* pages/deposit/deposit.wxss */
+
+.header {
+  height: 352rpx;
+  width: 100%;
+  position: relative;
+}
+
+.header-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.header-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.money {
+  font-size: 60rpx;
+  color: #fff;
+  margin-top: 100rpx;
+}
+
+.button {
+  width: 86%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  background-image: linear-gradient(to left, #fd6a70, #fc868b);
+  color: #fff;
+  box-shadow: 0 0 22px rgba(0, 0, 0, .35);
+  position: absolute;
+  bottom: -16rpx;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.remark {
+  padding: 15rpx;
+  margin: 32rpx 0 20rpx 0;
+}
+
+.remark navigator {
+  display: inline-block;
+}
+
+.text-content {
+  padding: 20rpx 15rpx;
+  background-color: #fff;
+}
+
+.title {
+  margin: 15rpx 0;
+}
+
+.long-text {
+  text-indent: 2em;
+  text-align: justify;
+}
+
+.text-content .f26 {
+  line-height: 46rpx;
+}
+
+
+/*退还押金*/
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 9999;
+  transition: all ease .6s;
+}
+
+.return-deposit {
+  position: fixed;
+  width: 92%;
+  height: 800rpx;
+  background-color: #fff;
+  z-index: 10000;
+  border-radius: 20rpx;
+  left: 0;
+  right: 0;
+  margin: 120rpx auto 0;
+  transition: all ease-in-out .4s;
+}
+
+.img-wapper {
+  width: 206rpx;
+  height: 206rpx;
+  border-radius: 50%;
+  margin: 80rpx auto 60rpx;
+  box-shadow: 0 0 22px rgba(0, 0, 0, .35);
+}
+
+.r-title {
+  margin-bottom: 20rpx;
+}
+
+.line {
+  height: 1px;
+  background-color: #eff3f6;
+  margin: 50rpx 0;
+}
+
+.btn {
+  width: 92%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+  margin: auto;
+  margin-bottom: 30rpx;
+  background-image: linear-gradient(to left, #00ad99, #04bd83);
+}
+
+.btn-return {
+  background-image: linear-gradient(to left, #b3c0c9, #bac7d0);
+}
+
+.close {
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+  bottom: -200rpx;
+  text-align: center;
+}

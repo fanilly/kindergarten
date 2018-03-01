@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/me/me",
     "pages/index/index",
+    "pages/deposit/deposit",
+    "pages/me/me",
     "pages/addResume/addResume",
     
     "pages/resumeCertification/resumeCertification",

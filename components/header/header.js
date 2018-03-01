@@ -7,6 +7,10 @@ Component({
   	userInfo:app.globalData.userInfo
   },
   methods:{
-
+  	handleGoToDeposit(){
+  		wx.navigateTo({
+  			url:'../deposit/deposit'
+  		});
+  	}
   }
 });
