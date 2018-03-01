@@ -19,7 +19,7 @@ Page({
     }, {
       name: '收益',
       value: 99785,
-      url: '/'
+      url: '../profit/profit'
     }]
   },
 

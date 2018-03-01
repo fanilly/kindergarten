@@ -1,0 +1,181 @@
+/* pages/profit/profit.wxss */
+
+.header {
+  height: 352rpx;
+  width: 100%;
+  position: relative;
+}
+
+.header-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.header-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.money {
+  font-size: 60rpx;
+  color: #fff;
+  margin-top: 80rpx;
+}
+
+.nav {
+  width: 720rpx;
+  height: 120rpx;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  z-index: 500;
+  background-color: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: -24rpx;
+  margin: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+
+.nav>view {
+  width: 50%;
+  height: 50rpx;
+  padding: 35rpx 0;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.nav text {
+  height: 32rpx;
+  position: relative;
+  top: -9rpx;
+  padding-left: 15rpx;
+}
+
+
+/*退还押金*/
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 9999;
+  transition: all ease .6s;
+}
+
+.return-deposit {
+  position: fixed;
+  width: 92%;
+  height: 800rpx;
+  background-color: #fff;
+  z-index: 10000;
+  border-radius: 20rpx;
+  left: 0;
+  right: 0;
+  margin: 120rpx auto 0;
+  transition: all ease-in-out .4s;
+}
+
+.img-wapper {
+  width: 400rpx;
+  height: 386rpx;
+  margin: 0 auto 10rpx;
+}
+
+.r-title {
+  margin-top: -30rpx;
+}
+
+.line {
+  height: 1px;
+  background-color: #eff3f6;
+  margin: 50rpx 0;
+}
+
+.input-wapper {
+  width: 92%;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  margin-bottom: 50rpx;
+  border: 2rpx solid #e6f18b;
+  background-color: rgba(230, 241, 139, .2);
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+
+.input-wapper input {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+}
+
+.btn {
+  width: 92%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+  margin: auto;
+  margin-bottom: 30rpx;
+  background-image: linear-gradient(to right, #00ad99, #04bd83);
+}
+
+.close {
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+  bottom: -200rpx;
+  text-align: center;
+}
+
+
+/*history*/
+
+.history-title {
+  display: flex;
+  align-items: center;
+  margin: 40rpx 0 20rpx;
+  padding: 0 15rpx;
+}
+
+.history-content {
+  background-color: #fff;
+  padding: 2rpx 15rpx;
+  min-height: 700rpx;
+}
+
+.history-item {
+  display: flex;
+  border-bottom: 1px solid #eff3f6;
+  padding: 15rpx;
+  align-items: center;
+}
+
+.history-content .history-item:last-child {
+  border-bottom: 0
+}
+
+.history-item .lside {
+  flex: 1;
+}
+
+.history-item .lside .f32 {
+  color: #7792ac;
+  padding-bottom: 6rpx;
+}
+
+.history-item .rside {
+  width: 200rpx;
+  text-align: right;
+  font-size: 36rpx;
+}

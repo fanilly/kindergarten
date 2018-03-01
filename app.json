@@ -1,20 +1,23 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/deposit/deposit",
+    "pages/calendar/calendar",
     "pages/me/me",
-    "pages/addResume/addResume",
     
+    "pages/addResume/addResume",
     "pages/resumeCertification/resumeCertification",
     "pages/diplomaCertification/diplomaCertification",
     "pages/realNameCertification/realNameCertification",
     "pages/orderHistoryDetail/orderHistoryDetail",
 
-    "pages/orderDetail/orderDetail",
-    "pages/credit/credit",
     "pages/orderHistory/orderHistory",
     "pages/rank/rank",
-    "pages/calendar/calendar",
+    "pages/credit/credit",
+    "pages/profit/profit",
+    
+    "pages/deposit/deposit",
+    "pages/orderDetail/orderDetail",
+    
     "components/theader/theader",
     "components/header/header"
   ],

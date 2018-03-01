@@ -1,0 +1,59 @@
+<!--pages/profit/profit.wxml-->
+<view class="wapper">
+  <view class="header">
+    <image src="../../assets/m_header.png" class="header-bg"></image>
+    <view class="header-content align-center">
+      <view class="money">
+        <text class="f28">￥</text>
+        9999.00
+        <text class="f24">元</text>
+      </view>
+      <view class="info f28 y-color">我的收益</view>
+      <view class="nav">
+        <view class="f32 b-color" data-rel="recharge" bindtap="handleRechargeOrWithdrawals">
+          <image src="../../assets/recharge.png" style="width: 50rpx;height: 44rpx;"></image>
+          <text>充值</text>
+        </view>
+        <image src="../../assets/line.png" style="width: 2rpx;height: 120rpx;"></image>
+        <view class="f32 b-color" data-rel="withdrawals" bindtap="handleRechargeOrWithdrawals">
+          <image src="../../assets/withdrawals.png" style="width: 50rpx;height: 44rpx;"></image>
+          <text>提现</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="history">
+  <view class="history-title f32 b-color">
+    <image src="../../assets/history.png" style="width: 36rpx;height: 36rpx;margin-right: 10rpx;"></image>
+    <text>历史记录</text>
+  </view>
+  <view class="history-content">
+    <block wx:for="abcdefghijklmn" wx:key="{{index}}">
+      <view class="history-item">
+        <view class="lside">
+          <view class="f32">提现</view>
+          <view class="f28 gray06">2018-02-09 12:30:25</view>
+        </view>
+        <view class="rside red-color">-200
+          <text class="f24">元</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="mask" style="opacity: {{mask.opacity}};display: {{mask.display}};"></view>
+<view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+  <view class="img-wapper">
+    <image src="../../assets/profit.png" style="width: 443rpx;height: 386rpx;"></image>
+  </view>
+  <view class="align-center f36 b-color r-title">{{isRecharge?'用户充值':'用户提现'}}</view>
+  <view class="line"></view>
+  <view class="input-wapper b-color">
+    <input placeholder-style="color:#8fa4a2" placeholder="{{isRecharge?'输入充值金额':'输入提现金额'}}" />
+  </view>
+  <view class="btn" bindtap="handleConfirm">{{isRecharge?'确认充值':'确认提现'}}</view>
+  <view class="close" bindtap="handleClosePopup">
+    <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+  </view>
+</view>
