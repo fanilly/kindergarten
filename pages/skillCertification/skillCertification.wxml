@@ -1,0 +1,38 @@
+<!--pages/skillCertification/skillCertification.wxml-->
+<!-- 图片 -->
+<view class="wapper">
+  <!-- 驾照首页照片 -->
+  <view class="uploader">
+    <view class="uploader-wapper">
+      <view class="uploader-choose" data-index="0" bindtap="chooseImage">
+        <image src="../../assets/img.png" style="width: 185rpx;height: 171rpx;"></image>
+        <view class="f32 gray06">点击上传驾照首页照片</view>
+      </view>
+      <view class="uploader-view" data-index="0" catchlongpress="handleShowControl" wx:if="{{files[0].url}}">
+        <image src="{{files[0].url}}" mode="aspectFill"></image>
+      </view>
+      <view class="uploader-control" data-index="0" bindtap="handleHideDelImage" style="display: {{files[0].showControl?'block':'none'}};opacity: {{files[0].showControl?1:0}};">
+        <image src="../../assets/del_01.png" style="width: 100rpx;height: 100rpx;" data-index="0" catchtap="handleDelImage"></image>
+        <view class="f32 red-color" data-index="0" catchtap="handleDelImage">删除图片</view>
+      </view>
+    </view>
+  </view>
+  <view class="placeholder-box30"></view>
+  <!-- 驾照副页照片 -->
+  <view class="uploader">
+    <view class="uploader-wapper">
+      <view class="uploader-choose" data-index="1" bindtap="chooseImage">
+        <image src="../../assets/img.png" style="width: 185rpx;height: 171rpx;"></image>
+        <view class="f32 gray06">点击上传驾照副页照片</view>
+      </view>
+      <view class="uploader-view" data-index="1" catchlongpress="handleShowControl" wx:if="{{files[1].url}}">
+        <image src="{{files[1].url}}" mode="aspectFill"></image>
+      </view>
+      <view class="uploader-control" data-index="1" bindtap="handleHideDelImage" style="display: {{files[1].showControl?'block':'none'}};opacity: {{files[1].showControl?1:0}};">
+        <image src="../../assets/del_01.png" style="width: 100rpx;height: 100rpx;" data-index="1" catchtap="handleDelImage"></image>
+        <view class="f32 red-color" data-index="1" catchtap="handleDelImage">删除图片</view>
+      </view>
+    </view>
+  </view>
+  <view class="public-subbtn">提交认证</view>
+</view>

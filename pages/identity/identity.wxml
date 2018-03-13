@@ -1,0 +1,14 @@
+<!--pages/identity/identity.wxml-->
+<view class="wapper">
+	<view class="f32 red-color text-center title">温馨提示！</view>
+	<view class="f28 gray06 text-center">身份选定之后再次进入将会使用本次选中的身份（身份选定之后不可更改）</view>
+	<view class="identity-btn">
+		<image src="../../assets/i1.png" style="width: 72rpx;height: 72rpx;position: relative;top:8rpx;"></image>
+		<view class="f32 b-color">我是司机</view>
+	</view>
+	<view class="identity-btn coach">
+		<image src="../../assets/i2.png" style="width: 72rpx;height: 72rpx;position: relative;top:8rpx;"></image>
+		<view class="f32 w-color">我是教练</view>
+	</view>
+	<view class="copy-right">©版权所有  郑州亲子教育农场联盟</view>
+</view>

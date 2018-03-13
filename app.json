@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/identity/identity",
+    "pages/skillCertification/skillCertification",
     "pages/calendar/calendar",
     "pages/me/me",
     

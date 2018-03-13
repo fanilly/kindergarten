@@ -132,6 +132,10 @@ page {
   height: 50rpx;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /*order-list*/
 
 .order-list {

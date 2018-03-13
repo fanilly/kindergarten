@@ -1,0 +1,65 @@
+/* pages/skillCertification/skillCertification.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.placeholder-box30 {
+  height: 30rpx;
+}
+
+.uploader {
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  height: 320rpx;
+}
+
+.uploader-wapper {
+  position: relative;
+  height: 320rpx;
+}
+
+.uploader-choose {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border: 4rpx dashed #b3c0c9;
+  text-align: center;
+  left: 0;
+  top: 0;
+  padding-top: 48rpx;
+}
+
+.uploader-view {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.uploader-view image {
+  width: 100%;
+  height: 100%;
+}
+
+.public-subbtn {
+  margin-top: 100rpx;
+}
+
+.uploader-control {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .9);
+  text-align: center;
+  padding-top: 80rpx;
+  transition: all ease .4s;
+}
