@@ -2,13 +2,13 @@
   "pages":[
     "pages/identity/identity",
     "pages/index/index",
-    "pages/addResume/addResume",
     "pages/agreement/agreement",
     "pages/realNameCertification/realNameCertification",
     "pages/skillCertification/skillCertification",
     "pages/calendar/calendar",
     "pages/me/me",
     
+    "pages/addResume/addResume",
     "pages/resumeCertification/resumeCertification",
     "pages/diplomaCertification/diplomaCertification",
     "pages/orderHistoryDetail/orderHistoryDetail",

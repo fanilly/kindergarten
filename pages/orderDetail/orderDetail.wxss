@@ -1,14 +1,35 @@
 /* pages/orderDetail/orderDetail.wxss */
+
 .confirm-grab {
-	position: fixed;
-	bottom: 20rpx;
-	width:90%;
-	margin:0 auto;
-	left: 0;
-	right: 0;
-	text-align: center;
-	height: 80rpx;
-	line-height: 80rpx;
-	border-radius: 40rpx;
-	box-shadow: 0 0 20px #999;
+  position: fixed;
+  bottom: 20rpx;
+  width: 90%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 0 20px #999;
+}
+
+.tb-btns {
+  display: block;
+  height: auto;
+  padding-bottom: 20rpx;
+}
+.tb-btns:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.tb-btns .tb-btns-item {
+  width: 33.33%;
+  float: left;
+  overflow:hidden;
+}
+
+.tb-btns .tb-btns-item:nth-child(3) image{
+	display: none;
 }

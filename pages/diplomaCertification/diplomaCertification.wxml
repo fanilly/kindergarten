@@ -1,74 +1,76 @@
 <!--pages/diplomaCertification/diplomaCertification.wxml-->
 <!-- 最高学历 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <picker bindchange="handleDiplomaChange" value="{{index}}" range="{{diploma}}">
-      <view class="picker-content">
-        <text>最高学历</text>{{diploma[curDiplomaIndex]?diploma[curDiplomaIndex]:'请选择'}}
-      </view>
-    </picker>
-  </view>
-</view>
-<!-- 所属院校 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <input placeholder-style="color:#555" placeholder="请填写毕业院校" />
-  </view>
-</view>
-<!-- 所学专业 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <input placeholder-style="color:#555" placeholder="请填写所学专业" />
-  </view>
-</view>
-<view class="placeholder-box50"></view>
-<!-- 毕业时间 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <picker mode="date" fields="month" value="{{graduationTime}}" bindchange="handleDateChange">
-      <view class="picker-content">
-        <text>毕业时间</text>{{graduationTime}}
-      </view>
-    </picker>
-  </view>
-</view>
-<!-- 专业从事年限 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <picker bindchange="handleYearsChange" value="{{index}}" range="{{years}}">
-      <view class="picker-content">
-        <text>专业从事年限</text>{{years[curYearIndex]?years[curYearIndex]:'请选择'}}
-      </view>
-    </picker>
-  </view>
-</view>
-<!-- 特长介绍 -->
-<view class="placeholder-box50"></view>
-<view class="cer-textarea-wapper">
-  <view class="cer-textarea-title">
+<form bindsubmit="handleFormSubmit">
+  <view class="cer-item-wapper">
     <view class="cer-icon-wapper">
       <image src="../../assets/cer_icon05.png"></image>
     </view>
-    <view>特长介绍</view>
+    <view class="cer-input-wapper">
+      <picker bindchange="handleDiplomaChange" value="{{index}}" range="{{diploma}}">
+        <view class="picker-content">
+          <text>最高学历</text>{{diploma[curDiplomaIndex]?diploma[curDiplomaIndex]:'请选择'}}
+        </view>
+      </picker>
+    </view>
   </view>
-  <view class="cer-textarea-content">
-  	<textarea placeholder="这个只有在按钮点击的时候才聚焦" placeholder-style="color:#555" />
-  	<view class="count-num-wapper">0/200</view>
+  <!-- 所属院校 -->
+  <view class="cer-item-wapper">
+    <view class="cer-icon-wapper">
+      <image src="../../assets/cer_icon05.png"></image>
+    </view>
+    <view class="cer-input-wapper">
+      <input placeholder-style="color:#555" name="school" placeholder="请填写毕业院校" />
+    </view>
   </view>
-</view>
-<view class="public-subbtn">提交</view>
+  <!-- 所学专业 -->
+  <view class="cer-item-wapper">
+    <view class="cer-icon-wapper">
+      <image src="../../assets/cer_icon05.png"></image>
+    </view>
+    <view class="cer-input-wapper">
+      <input placeholder-style="color:#555" name="major" placeholder="请填写所学专业" />
+    </view>
+  </view>
+  <view class="placeholder-box50"></view>
+  <!-- 毕业时间 -->
+  <view class="cer-item-wapper">
+    <view class="cer-icon-wapper">
+      <image src="../../assets/cer_icon05.png"></image>
+    </view>
+    <view class="cer-input-wapper">
+      <picker mode="date" fields="month" value="{{graduationTime}}" bindchange="handleDateChange">
+        <view class="picker-content">
+          <text>毕业时间</text>{{graduationTime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 专业从事年限 -->
+  <view class="cer-item-wapper">
+    <view class="cer-icon-wapper">
+      <image src="../../assets/cer_icon05.png"></image>
+    </view>
+    <view class="cer-input-wapper">
+      <picker bindchange="handleYearsChange" value="{{index}}" range="{{years}}">
+        <view class="picker-content">
+          <text>专业从事年限</text>{{years[curYearIndex]?years[curYearIndex]:'请选择'}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 特长介绍 -->
+  <view class="placeholder-box50"></view>
+  <view class="cer-textarea-wapper">
+    <view class="cer-textarea-title">
+      <view class="cer-icon-wapper">
+        <image src="../../assets/cer_icon05.png"></image>
+      </view>
+      <view>特长介绍</view>
+    </view>
+    <view class="cer-textarea-content">
+      <textarea name="specialty" placeholder="这个只有在按钮点击的时候才聚焦" placeholder-style="color:#555" />
+      <view class="count-num-wapper">0/200</view>
+    </view>
+  </view>
+  <button formType="submit" class="public-subbtn">提交</button>
+</form>

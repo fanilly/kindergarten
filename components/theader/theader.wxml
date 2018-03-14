@@ -5,13 +5,13 @@
   <view class="header-content">
     <view class="portrait">
       <view class="protrait-wapper">
-        <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+        <image src="{{webUserInfo.userPhoto}}" mode="aspectFill"></image>
       </view>
-      <image class="deposit" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
+      <image class="deposit" wx:if="{{!DISABLE_RECHARGE}}" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
     </view>
     <view class="info">
-      <view class="f28 w-color align-center">{{userInfo.nickName}}</view>
-      <view class="f24 w-color align-center">ID:5206626</view>
+      <view class="f28 w-color align-center">{{webUserInfo.userName}}</view>
+      <view class="f24 w-color align-center">ID:{{webUserInfo.userId}}</view>
     </view>
   </view>
 </view>

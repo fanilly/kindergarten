@@ -37,7 +37,17 @@ const HOST = 'tzn.honghuseo.cn',
     CERTIFICATION_URL: `${API}/user/certification`,
 
     //绑定手机号
-    BIND_PHONE_URL: `${API}/user/mobile`
+    BIND_PHONE_URL: `${API}/user/mobile`,
+
+    //获取活动列表
+    TASK_LIST_URL: `${API}/task/activeList`,
+
+    //获取活动详情
+    TASK_INFO_URL: `${API}/task/activeInfo`,
+
+    //抢单
+    TASK_GO_URL: `${API}/task/GO`,
+
   };
 
 module.exports = CONFIG;

@@ -3,25 +3,36 @@
   <image src="../../assets/header_bg.png" class="header-bg"></image>
   <view class="content">
     <view class="lside">
-      <view class="portrait">
+      <view class="portrait" bindtap="handleGoToMe">
         <view class="protrait-wapper">
           <image src="{{webUserInfo.userPhoto}}" mode="aspectFill"></image>
         </view>
         <image wx:if="{{!DISABLE_RECHARGE}}" class="deposit" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
       </view>
       <view class="info">
-        <view class="username">{{webUserInfo.userName}}</view>
-        <view class="id-box">
-          <view class="userid">ID:5821066</view>
+        <view class="username" bindtap="handleGoToMe">{{webUserInfo.userName}}</view>
+        <view class="id-box" bindtap="handleGoToMe">
+          <view class="userid">ID:{{webUserInfo.userId}}</view>
           <block wx:if="{{IDENTITY == 1}}">
-            <view wx:if="{{webUserInfo.veracity == 1}}">
+            <view wx:if="{{webUserInfo.veracity == 2}}">
               <image src="../../assets/v_icon01.png"></image>
             </view>
-            <view wx:if="{{webUserInfo.education == 1}}">
+            <view wx:if="{{webUserInfo.education == 2}}">
               <image src="../../assets/v_icon02.png"></image>
             </view>
-            <view wx:if="{{webUserInfo.qualification == 1}}">
+            <view wx:if="{{webUserInfo.qualification == 2}}">
               <image src="../../assets/v_icon03.png"></image>
+            </view>
+          </block>
+          <block wx:if="{{IDENTITY == 2}}">
+            <view wx:if="{{webUserInfo.veracity == 2}}">
+              <image src="../../assets/v_icon01.png"></image>
+            </view>
+            <view wx:if="{{webUserInfo.education == 2}}">
+              <image src="../../assets/v_icon04.png"></image>
+            </view>
+            <view wx:if="{{webUserInfo.qualification == 2}}">
+              <image src="../../assets/v_icon05.png"></image>
             </view>
           </block>
         </view>
@@ -29,7 +40,7 @@
     </view>
     <navigator wx:if="{{IDENTITY == 1}}" url="../rank/rank" class="medal">
       <image src="../../assets/h_lv.png" style="width:55rpx;height:55rpx;"></image>
-      <view class="flag">{{lv}}级教练</view>
+      <view class="flag">{{lv}}星教练</view>
     </navigator>
     <navigator url="../orderHistory/orderHistory" class="medal">
       <image src="../../assets/h_order.png" style="width:55rpx;height:55rpx;"></image>

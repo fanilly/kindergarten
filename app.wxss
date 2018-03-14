@@ -71,6 +71,10 @@ page {
 
 /*全局颜色*/
 
+.placeholder-box120 {
+  height: 120rpx;
+}
+
 .main-color {
   color: #00b19b;
 }
@@ -490,5 +494,5 @@ page {
 
 .weui-loadmore {
   margin: 0 auto;
-  color:#b3c0c9;
+  color: #b3c0c9;
 }

@@ -46,7 +46,7 @@ App({
             url: `/pages/index/index`
           });
         } else {
-          console.log('-------- 成功获取到信息，该用户未实名认证');
+          console.log('-------- 成功获取到信息');
           if (this.getUserInfoSuccessCallback) this.getUserInfoSuccessCallback();
           if (this.getComponentsRequiredInfo) this.getComponentsRequiredInfo();
           this.globalData.distinguish = true;

@@ -34,24 +34,29 @@ Component({
         url: '../deposit/deposit'
       });
     },
+    handleGoToMe() {
+      wx.switchTab({
+        url: `/pages/me/me`
+      });
+    },
     updatePageData() {
       let webUserInfo = app.globalData.webUserInfo,
         lv, roleLevel = webUserInfo.roleLevel * 1;
       switch (roleLevel) {
-        case 0:
-          lv = '五';
-          break;
         case 1:
-          lv = '四';
+          lv = '一';
           break;
         case 2:
-          lv = '三';
-          break;
-        case 3:
           lv = '二';
           break;
+        case 3:
+          lv = '三';
+          break;
         case 4:
-          lv = '一';
+          lv = '四';
+          break;
+        case 5:
+          lv = '五';
           break;
         default:
           lv = '..';

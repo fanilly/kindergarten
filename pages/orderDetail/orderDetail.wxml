@@ -1,76 +1,88 @@
 <!--pages/orderDetail/orderDetail.wxml-->
 <header></header>
-<!--  -->
-<view class="c-header">
-  <view class="c-title">
-    2018-02-01
-    <image src="../../assets/c_icon13.png" style="height: 36rpx;width:36rpx;vertical-align: middle;display: inline-block;position: relative;top:-3rpx"></image>
-    <text class="f28">时长：3天</text>
-    <view class="triangle"></view>
-  </view>
-  <view class="c-order">
-  	<view class="c-order-item">
-  		<view><image src="../../assets/c_icon07.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image></view>
-  		<view class="f28 gray01">集合时间：</view>
-  		<view class="f26 gray02">2018-02-01 早上： 7:00</view>
-  	</view>
-  	<view class="c-order-item">
-  		<view><image src="../../assets/c_icon08.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image></view>
-  		<view class="f28 gray01">活动报酬：</view>
-  		<view class="f32 red-color">￥1200</view>
-  	</view>
-  	<view class="c-order-item">
-  		<view><image src="../../assets/c_icon09.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image></view>
-  		<view class="f28 gray01">集合地点：</view>
-  		<view class="f26 gray02 long-text">瓦洛兰大陆西南 诺克萨斯东北 1000公里爱琴海域海岛上的城邦</view>
-  	</view>
-  	<view class="c-order-item">
-  		<view><image src="../../assets/c_icon09.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image></view>
-  		<view class="f28 gray01">到达地点：</view>
-  		<view class="f26 gray02 long-text">瓦洛兰大陆西南 诺克萨斯东北 1000公里爱琴海域海岛上的城邦</view>
-  	</view>
-  </view>
-</view>
-<!-- 活动需求 -->
-<view class="text-block">
-  <view class="tb-title">
-    <view>
-      <image src="../../assets/c_icon10.png" style="width: 36rpx;height: 36rpx;position: relative;top:4rpx;"></image>
+<import src="../../view/loaderLayer.wxml" />
+<template wx:if="{{!loaded}}" is="loader-leyer" data="{{loadData}}"></template>
+<view class="wapper" wx:if="{{loaded}}">
+  <view class="c-header">
+    <view class="c-title">
+      {{datas.activeTime}}
+      <image src="../../assets/c_icon13.png" style="height: 36rpx;width:36rpx;vertical-align: middle;display: inline-block;position: relative;top:-3rpx"></image>
+      <text class="f28">时长：{{datas.activeDays}}天</text>
+      <view class="triangle"></view>
     </view>
-    <view>
-      活动需求
-    </view>
-    <view>
-      <image src="../../assets/c_icon12.png" style="width:36rpx;height:36rpx;display: inline-block;vertical-align: middle;position: relative;top:-4rpx;"></image>
-      注意儿童安全，提升服务质量
-    </view>
-  </view>
-  <view class="tb-content">
-    幼儿园春季出行活动，全天续要五个活动，幼儿园自行才艺展示活动、庄园特色活动、科普教育活动...，其中体智能教练需要负责协调庄园特色活动、注释科普教育活动、以及安排游戏活动的内容。
-  </view>
-</view>
-<!-- 教练需求 -->
-<view class="text-block">
-  <view class="tb-title">
-    <view>
-      <image src="../../assets/c_icon11.png" style="width: 36rpx;height: 36rpx;position: relative;top:4rpx;"></image>
-    </view>
-    <view>
-      教练需求
-    </view>
-    <view></view>
-  </view>
-  <view class="tb-btns-content">
-    <view class="tb-btns">
-      <block wx:for="{{btns}}" wx:key="{{index}}">
-        <view class="tb-btns-item">
-          <view class="f42 main-color">{{item.value}}</view>
-          <view class="f28 gray06">{{item.name}}</view>
-          <image wx:if="{{index!=btns.length-1}}" src="../../assets/line.png" style="width:2rpx;height: 180rpx;"></image>
+    <view class="c-order">
+      <view class="c-order-item">
+        <view>
+          <image src="../../assets/c_icon07.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
         </view>
-      </block>
+        <view class="f28 gray01">集合时间：</view>
+        <view class="f26 gray02">2018-02-01 早上： 7:00</view>
+      </view>
+      <view class="c-order-item">
+        <view>
+          <image src="../../assets/c_icon08.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
+        </view>
+        <view class="f28 gray01">活动报酬：</view>
+        <view class="f32 red-color">￥{{datas.money}}</view>
+      </view>
+      <view class="c-order-item">
+        <view>
+          <image src="../../assets/c_icon09.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
+        </view>
+        <view class="f28 gray01">集合地点：</view>
+        <view class="f26 gray02 long-text">{{datas.schoolAddress}}({{datas.schoolName}})</view>
+      </view>
+      <view class="c-order-item">
+        <view>
+          <image src="../../assets/c_icon09.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
+        </view>
+        <view class="f28 gray01">到达地点：</view>
+        <view class="f26 gray02 long-text">{{datas.gardenAddress}}({{datas.gardenName}})</view>
+      </view>
     </view>
   </view>
+  <!-- 活动需求 -->
+  <view class="text-block">
+    <view class="tb-title">
+      <view>
+        <image src="../../assets/c_icon10.png" style="width: 36rpx;height: 36rpx;position: relative;top:4rpx;"></image>
+      </view>
+      <view>
+        活动需求
+      </view>
+      <view>
+        <image src="../../assets/c_icon12.png" style="width:36rpx;height:36rpx;display: inline-block;vertical-align: middle;position: relative;top:-4rpx;"></image>
+        注意儿童安全，提升服务质量
+      </view>
+    </view>
+    <view class="tb-content">
+      幼儿园春季出行活动，全天续要五个活动，幼儿园自行才艺展示活动、庄园特色活动、科普教育活动...，其中体智能教练需要负责协调庄园特色活动、注释科普教育活动、以及安排游戏活动的内容。
+    </view>
+  </view>
+  <!-- 教练需求 -->
+  <view class="text-block">
+    <view class="tb-title">
+      <view>
+        <image src="../../assets/c_icon11.png" style="width: 36rpx;height: 36rpx;position: relative;top:4rpx;"></image>
+      </view>
+      <view>
+        人员配备
+      </view>
+      <view></view>
+    </view>
+    <view class="tb-btns-content">
+      <view class="tb-btns">
+        <block wx:for="{{datas.roleList}}" wx:key="{{index}}">
+          <view class="tb-btns-item">
+            <view class="f42 main-color">{{item.sum}}/{{item.now||0}}</view>
+            <view class="f28 gray06">{{item.roleName}}</view>
+            <image wx:if="{{index!=btns.length-1}}" src="../../assets/line.png" style="width:2rpx;height: 180rpx;"></image>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="placeholder-box120"></view>
+  <!-- 抢单按钮 -->
+  <view class="confirm-grab red-bg w-color f28" bindtap="handleConfirmGrab">确认抢单</view>
 </view>
-<!-- 抢单按钮 -->
-<view class="confirm-grab red-bg w-color f28">确认抢单</view>

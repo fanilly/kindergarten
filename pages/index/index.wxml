@@ -1,41 +1,43 @@
 <!--pages/index/index.wxml-->
 <header></header>
-<block wx:for="test" wx:key="{{index}}">
-  <view class="order-list">
-    <view class="lside">
-      <view class="header">
-        <view class="ellipsis">郑州蓝天幼儿园</view>
-        <view>
-          <image src="../../assets/list_icon01.png" style="width:80rpx;height:34rpx"></image>
+<view class="wapper">
+  <block wx:for="{{lists}}" wx:key="{{index}}">
+    <view class="order-list">
+      <view class="lside">
+        <view class="header">
+          <view class="ellipsis">{{item.schoolName}}</view>
+          <view>
+            <image src="../../assets/list_icon01.png" style="width:80rpx;height:34rpx"></image>
+          </view>
+          <view class="ellipsis">{{item.gardenName}}</view>
         </view>
-        <view class="ellipsis">康百万庄园</view>
+        <view class="flags">
+          <view>
+            <image src="../../assets/list_icon02.png" style="width:40rpx;height:34rpx"></image>
+            <text>{{item.activeDays}}天</text>
+          </view>
+          <view>
+            <image src="../../assets/list_icon03.png" style="width:40rpx;height:34rpx"></image>
+            <text>{{item.childNum}}人</text>
+          </view>
+          <view>
+            <image src="../../assets/list_icon04.png" style="width:40rpx;height:34rpx"></image>
+            <text>{{item.activeTime}}</text>
+          </view>
+        </view>
+        <view class="address">
+          <view>
+            <image src="../../assets/list_icon05.png" style="width:36rpx;height:42rpx"></image>
+          </view>
+          <view>
+            {{item.schoolAddress}}
+          </view>
+        </view>
       </view>
-      <view class="flags">
-        <view>
-          <image src="../../assets/list_icon02.png" style="width:40rpx;height:34rpx"></image>
-          <text>5天</text>
-        </view>
-        <view>
-          <image src="../../assets/list_icon03.png" style="width:40rpx;height:34rpx"></image>
-          <text>48人</text>
-        </view>
-        <view>
-          <image src="../../assets/list_icon04.png" style="width:40rpx;height:34rpx"></image>
-          <text>2018-01-12</text>
-        </view>
-      </view>
-      <view class="address">
-        <view>
-          <image src="../../assets/list_icon05.png" style="width:36rpx;height:42rpx"></image>
-        </view>
-        <view>
-          郑州市金水区未来路与解放路交叉口向南200米西郑州蓝天幼儿园西郑州蓝天幼儿园西郑州蓝天幼儿园
-        </view>
-      </view>
+      <navigator hover-class="none" url="../orderDetail/orderDetail?activeId={{item.activeId}}" class="rside">
+        <view class="parallelogram"></view>
+        <view>接单</view>
+      </navigator>
     </view>
-    <navigator hover-class="none" url="../orderDetail/orderDetail" class="rside">
-      <view class="parallelogram"></view>
-      <view>接单</view>
-    </navigator>
-  </view>
-</block>
+  </block>
+</view>

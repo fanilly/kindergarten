@@ -6,13 +6,13 @@
     <view class="header-content">
       <view class="portrait">
         <view class="protrait-wapper">
-          <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+          <image src="{{webUserInfo.userPhoto}}" mode="aspectFill"></image>
         </view>
-        <image class="deposit" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
+        <image class="deposit" wx:if="{{!DISABLE_RECHARGE}}" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
       </view>
       <view class="info">
-        <view class="f28 w-color align-center">{{userInfo.nickName}}</view>
-        <view class="f24 w-color align-center">ID:5206626</view>
+        <view class="f28 w-color align-center">{{webUserInfo.userName}}</view>
+        <view class="f24 w-color align-center">ID:{{webUserInfo.userId}}</view>
       </view>
       <view class="btns-wapper">
         <view class="btns">
@@ -35,23 +35,13 @@
         <image src="../../assets/me_icon01.png" style="width:36rpx;height: 36rpx;margin-top:15rpx;"></image>
       </view>
       <view class="f28 gray02">信息认证</view>
-      <view class="f24 gray06">您还有两项未认证</view>
+      <view class="f24 gray06">您还有{{surplus}}项未认证</view>
     </view>
     <view class="info-content">
-      <navigator url="../realNameCertification/realNameCertification?type={{webUserInfo.roleType}}&source=yes" hover-class="none">
-        <image src="../../assets/me_icon03.png" style="width:100rpx;height: 91rpx;"></image>
-        <view class="f26 gray03 align-center">实名认证</view>
-        <view class="f24 gray06 align-center">已完成</view>
-      </navigator>
-      <navigator url="../diplomaCertification/diplomaCertification" hover-class="none">
-        <image src="../../assets/me_icon04.png" style="width:100rpx;height: 91rpx;"></image>
-        <view class="f26 gray03 align-center">学历认证</view>
-        <view class="f24 gray06 align-center">未完成</view>
-      </navigator>
-      <navigator url="../resumeCertification/resumeCertification" hover-class="none">
-        <image src="../../assets/me_icon05.png" style="width:100rpx;height: 91rpx;"></image>
-        <view class="f26 gray03 align-center">履历认证</view>
-        <view class="f24 gray06 align-center">未完成</view>
+      <navigator wx:for="{{cerBtns}}" wx:key="{{index}}" url="{{item.url}}" hover-class="none">
+        <image src="{{item.icon}}" style="width:100rpx;height: 91rpx;"></image>
+        <view class="f26 gray03 align-center">{{item.name}}</view>
+        <view class="f24 gray06 align-center">{{item.status}}</view>
       </navigator>
     </view>
   </view>
