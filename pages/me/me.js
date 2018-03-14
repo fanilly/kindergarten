@@ -9,23 +9,7 @@ Page({
     IDENTITY: '', //用户身份
     lv: '..', //用户等级
     surplus: 0, //剩余几项未认证
-    btns: [{
-      name: '已接单',
-      value: 99,
-      url: '../orderHistory/orderHistory'
-    }, {
-      name: '教练等级',
-      value: 'III',
-      url: '../rank/rank'
-    }, {
-      name: '诚信度',
-      value: 66,
-      url: '../credit/credit'
-    }, {
-      name: '收益',
-      value: 99785,
-      url: '../profit/profit'
-    }],
+    btns: [],
     cerBtns: []
   },
 
@@ -74,7 +58,7 @@ Page({
         url: '../rank/rank'
       }, {
         name: '诚信度',
-        value: 66,
+        value: webUserInfo.honest,
         url: '../credit/credit'
       }, {
         name: '收益',
@@ -107,7 +91,7 @@ Page({
         url: '../orderHistory/orderHistory'
       }, {
         name: '诚信度',
-        value: 66,
+        value: webUserInfo.honest,
         url: '../credit/credit'
       }, {
         name: '收益',
@@ -120,15 +104,15 @@ Page({
         icon: `../../assets/me_icon03${webUserInfo.veracity == 2 ?'_c':''}.png`,
         url: '../realNameCertification/realNameCertification?type=1&source=yes'
       }, {
-        name: '技能认证',
-        status: webUserInfo.education == 0 ? '未认证' : webUserInfo.education == 1 ? '审核中' : webUserInfo.education == 2 ? '已完成' : '未通过',
-        icon: `../../assets/me_icon08${webUserInfo.education == 2 ?'_c':''}.png`,
-        url: '../skillCertification/skillCertification'
-      }, {
         name: '车辆认证',
         status: webUserInfo.qualification == 0 ? '未认证' : webUserInfo.qualification == 1 ? '审核中' : webUserInfo.qualification == 2 ? '已完成' : '未通过',
-        icon: `../../assets/me_icon09${webUserInfo.qualification == 2 ?'_c':''}.png`,
+        icon: `../../assets/me_icon08${webUserInfo.qualification == 2 ?'_c':''}.png`,
         url: '../carCertification/carCertification'
+      }, {
+        name: '技能认证',
+        status: webUserInfo.education == 0 ? '未认证' : webUserInfo.education == 1 ? '审核中' : webUserInfo.education == 2 ? '已完成' : '未通过',
+        icon: `../../assets/me_icon09${webUserInfo.education == 2 ?'_c':''}.png`,
+        url: '../skillCertification/skillCertification'
       }];
       cerBtns.forEach(item => {
         if (item.status == '未认证') surplus++;

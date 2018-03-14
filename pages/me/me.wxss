@@ -83,7 +83,7 @@
 }
 
 .btns navigator view:nth-child(2) {
-  padding-top: 15rpx;
+  padding-top: 6rpx;
 }
 
 .btns navigator image {

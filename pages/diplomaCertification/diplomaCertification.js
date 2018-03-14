@@ -60,11 +60,11 @@ Page({
         data: {
           type: 1,
           userId: app.globalData.userID,
-          data1: temp.diploma[data.curDiplomaIndex],
+          data1: temp.diploma[temp.curDiplomaIndex],
           data2: data.school,
           data3: data.major,
           data4: temp.graduationTime,
-          data5: temp.years[data.curYearIndex],
+          data5: temp.years[temp.curYearIndex],
           data6: data.specialty
         },
         success: res => {
