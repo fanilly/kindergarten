@@ -1,0 +1,27 @@
+/* pages/agreement/agreement.wxss */
+
+page {
+  background-color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.title1 {
+  font-size: 34rpx;
+  text-align: center;
+  color: #353535;
+  padding: 30rpx 0;
+}
+
+.title2 {
+  font-size: 32rpx;
+  color: #555;
+  padding: 20rpx 0;
+}
+
+.title3 {
+  font-size: 28rpx;
+  color: #666;
+  text-indent: 2em;
+  line-height: 50rpx;
+}

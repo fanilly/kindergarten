@@ -6,8 +6,8 @@
     <!-- 头像 -->
     <view class="portrait">
       <view class="protrait-wapper">
-        <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
-        <view class="protrait-msg">点击上传</view>
+        <image src="{{imgUrl}}" mode="aspectFill"></image>
+        <view class="protrait-msg" bindtap="chooseImage">点击上传</view>
       </view>
     </view>
     <!-- 表单内容 -->
@@ -19,7 +19,7 @@
             <image src="../../assets/cer_icon01.png" style="width:36rpx;height:39rpx;"></image>
           </view>
           <view class="f28">
-            <input placeholder-style="color:#fff" name="realName" placeholder="请输入真实姓名" />
+            <input placeholder-style="color:#fff" value="{{curInfo.realName}}" name="realName" placeholder="请输入真实姓名" />
           </view>
         </view>
         <!-- 身份证号 -->
@@ -28,7 +28,7 @@
             <image src="../../assets/cer_icon02.png" style="width:36rpx;height:39rpx;"></image>
           </view>
           <view class="f28">
-            <input placeholder-style="color:#fff" name="IDNumber" placeholder="请输入真实身份证号" />
+            <input placeholder-style="color:#fff" value="{{curInfo.IDNumber}}" name="IDNumber" placeholder="请输入真实身份证号" />
           </view>
         </view>
         <!-- 手机号 -->
@@ -37,7 +37,7 @@
             <image src="../../assets/cer_icon03.png" style="width:36rpx;height:39rpx;"></image>
           </view>
           <view class="f28">
-            <input placeholder-style="color:#fff" bindinput="recordPhoneNumber" name="phoneNumber" maxlength="11" placeholder="请输入手机号" />
+            <input placeholder-style="color:#fff" bindinput="recordPhoneNumber" name="phoneNumber" maxlength="11" value="{{curInfo.phoneNumber}}" placeholder="请输入手机号" />
             <view class="get-vercode {{being?'get-vercode-ing':''}}" bindtap="handleGetVerf">{{being?time+'s':'获取验证码'}}</view>
           </view>
         </view>
@@ -51,7 +51,7 @@
           </view>
         </view>
         <!-- 个人简介 -->
-        <textarea class="self-introduction" placeholder="点击编辑个人简介" name="personalProfile" placeholder-style="color:#fff" />
+        <textarea class="self-introduction" value="{{curInfo.desc}}" placeholder="点击编辑个人简介" name="personalProfile" placeholder-style="color:#fff" />
         <!-- 用户协议 -->
         <view class="agreement f24 gray06">注：点击提交暨表示已阅读并同意<navigator class="y-color" url="../agreement/agreement">《用户协议》</navigator></view>
         <!-- 提交 -->

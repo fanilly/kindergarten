@@ -21,11 +21,23 @@ const HOST = 'tzn.honghuseo.cn',
     // 登录地址，用于建立会话
     LOGIN_URL: `${API}/user/get_openid`,
 
+    //获取验证码
+    VER_CODE_URL: `${API}/user/get_yzm`,
+
+    //上传照片
+    UPLOAD_IMG_URL: `${API}/base/uploadGoodsPic`,
+
     //获取用户信息
     USER_INFO_URL: `${API}/user/user_info`,
 
-    //获取验证码
-    VER_CODE_URL:`${API}/user/get_yzm`
+    //修改用户信息
+    MODIFY_INFO_URL: `${API}/user/modify_info`,
+
+    //认证信息
+    CERTIFICATION_URL: `${API}/user/certification`,
+
+    //绑定手机号
+    BIND_PHONE_URL: `${API}/user/mobile`
   };
 
 module.exports = CONFIG;

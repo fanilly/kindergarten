@@ -1,0 +1,9 @@
+<template name="loader-leyer">
+  <view class="loading-layer">
+    <image src="../../assets/l{{loadData.type}}.png" style="width: 340rpx;height: 160rpx;"></image>
+    <view class="weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">{{loadData.msg}}</view>
+    </view>
+  </view>
+</template>

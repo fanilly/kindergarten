@@ -1,61 +1,63 @@
 <!--pages/addResume/addResume.wxml-->
-<!-- 公司名称 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <input placeholder-style="color:#555" placeholder="请填写公司名称" />
-  </view>
-</view>
-<!-- 你的职位 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <input placeholder-style="color:#555" placeholder="请填写你的职位" />
-  </view>
-</view>
-<view class="placeholder-box50"></view>
-<!-- 入职时间 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <picker mode="date" fields="month" value="{{entryTime}}" bindchange="handleEntryTimeChange">
-      <view class="picker-content">
-        <text>入职时间</text>{{entryTime}}
-      </view>
-    </picker>
-  </view>
-</view>
-<!-- 离职时间 -->
-<view class="cer-item-wapper">
-  <view class="cer-icon-wapper">
-    <image src="../../assets/cer_icon05.png"></image>
-  </view>
-  <view class="cer-input-wapper">
-    <picker mode="date" fields="month" start="{{entryTime}}-01" value="{{quitTime}}" bindchange="handleQuitTimeChange">
-      <view class="picker-content">
-        <text>离职时间</text>{{quitTime}}
-      </view>
-    </picker>
-  </view>
-</view>
-<!-- 工作内容 -->
-<view class="placeholder-box50"></view>
-<view class="cer-textarea-wapper">
-  <view class="cer-textarea-title">
+<form bindsubmit="handleFormSubmit">
+  <!-- 公司名称 -->
+  <view class="cer-item-wapper">
     <view class="cer-icon-wapper">
       <image src="../../assets/cer_icon05.png"></image>
     </view>
-    <view>工作内容</view>
+    <view class="cer-input-wapper">
+      <input placeholder-style="color:#555" name="corporateName" placeholder="请填写公司名称" />
+    </view>
   </view>
-  <view class="cer-textarea-content">
-    <textarea placeholder="工作内容" placeholder-style="color:#555" />
-    <view class="count-num-wapper">0/200</view>
+  <!-- 你的职位 -->
+  <view class="cer-item-wapper">
+    <view class="cer-icon-wapper">
+      <image src="../../assets/cer_icon05.png"></image>
+    </view>
+    <view class="cer-input-wapper">
+      <input placeholder-style="color:#555" name="job" placeholder="请填写你的职位" />
+    </view>
   </view>
-</view>
-<view class="public-subbtn">提交</view>
+  <view class="placeholder-box50"></view>
+  <!-- 入职时间 -->
+  <view class="cer-item-wapper">
+    <view class="cer-icon-wapper">
+      <image src="../../assets/cer_icon05.png"></image>
+    </view>
+    <view class="cer-input-wapper">
+      <picker mode="date" fields="month" value="{{entryTime}}" bindchange="handleEntryTimeChange">
+        <view class="picker-content">
+          <text>入职时间</text>{{entryTime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 离职时间 -->
+  <view class="cer-item-wapper">
+    <view class="cer-icon-wapper">
+      <image src="../../assets/cer_icon05.png"></image>
+    </view>
+    <view class="cer-input-wapper">
+      <picker mode="date" fields="month" start="{{entryTime}}-01" value="{{quitTime}}" bindchange="handleQuitTimeChange">
+        <view class="picker-content">
+          <text>离职时间</text>{{quitTime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 工作内容 -->
+  <view class="placeholder-box50"></view>
+  <view class="cer-textarea-wapper">
+    <view class="cer-textarea-title">
+      <view class="cer-icon-wapper">
+        <image src="../../assets/cer_icon05.png"></image>
+      </view>
+      <view>工作内容</view>
+    </view>
+    <view class="cer-textarea-content">
+      <textarea placeholder="工作内容" name="jobContent" placeholder-style="color:#555" />
+      <view class="count-num-wapper">0/200</view>
+    </view>
+  </view>
+  <button formType="submit" class="public-subbtn">提交</button>
+</form>

@@ -1,31 +1,39 @@
 <!--components/header/header.wxml-->
 <view class="header">
-	<image src="../../assets/header_bg.png" class="header-bg"></image>
-	<view class="content">
-		<view class="lside">
-			<view class="portrait">
-				<view class="protrait-wapper">
-					<image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
-				</view>
-				<image class="deposit" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
-			</view>
-			<view class="info">
-				<view class="username">{{userInfo.nickName}}</view>
-				<view class="id-box">
-					<view class="userid">ID:5821066</view>
-					<view><image src="../../assets/v_icon01.png"></image></view>
-					<view><image src="../../assets/v_icon02.png"></image></view>
-					<view><image src="../../assets/v_icon03.png"></image></view>
-				</view>
-			</view>
-		</view>
-		<navigator url="../rank/rank" class="medal">
-			<image src="../../assets/h_lv.png" style="width:55rpx;height:55rpx;"></image>
-			<view class="flag">三级教练</view>
-		</navigator>
-		<navigator url="../orderHistory/orderHistory" class="medal">
-			<image src="../../assets/h_order.png" style="width:55rpx;height:55rpx;"></image>
-			<view class="flag">已接999单</view>
-		</navigator>
-	</view>
+  <image src="../../assets/header_bg.png" class="header-bg"></image>
+  <view class="content">
+    <view class="lside">
+      <view class="portrait">
+        <view class="protrait-wapper">
+          <image src="{{webUserInfo.userPhoto}}" mode="aspectFill"></image>
+        </view>
+        <image wx:if="{{!DISABLE_RECHARGE}}" class="deposit" src="../../assets/deposited.png" bindtap="handleGoToDeposit"></image>
+      </view>
+      <view class="info">
+        <view class="username">{{webUserInfo.userName}}</view>
+        <view class="id-box">
+          <view class="userid">ID:5821066</view>
+          <block wx:if="{{IDENTITY == 1}}">
+            <view wx:if="{{webUserInfo.veracity == 1}}">
+              <image src="../../assets/v_icon01.png"></image>
+            </view>
+            <view wx:if="{{webUserInfo.education == 1}}">
+              <image src="../../assets/v_icon02.png"></image>
+            </view>
+            <view wx:if="{{webUserInfo.qualification == 1}}">
+              <image src="../../assets/v_icon03.png"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <navigator wx:if="{{IDENTITY == 1}}" url="../rank/rank" class="medal">
+      <image src="../../assets/h_lv.png" style="width:55rpx;height:55rpx;"></image>
+      <view class="flag">{{lv}}级教练</view>
+    </navigator>
+    <navigator url="../orderHistory/orderHistory" class="medal">
+      <image src="../../assets/h_order.png" style="width:55rpx;height:55rpx;"></image>
+      <view class="flag">已接{{webUserInfo.taskNum}}单</view>
+    </navigator>
+  </view>
 </view>

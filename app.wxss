@@ -158,8 +158,8 @@ page {
   display: flex;
   font-size: 30rpx;
   color: #555555;
-  height: 34rpx;
-  padding: 18rpx;
+  height: 38rpx;
+  padding: 15rpx;
 }
 
 .order-list .lside .header view:nth-child(1) {
@@ -478,4 +478,17 @@ page {
   background-image: linear-gradient(to right, #0eaf9c, #00ad99);
   border-radius: 10rpx;
   box-shadow: 0 0 12px #ccc;
+}
+
+
+/*加载层*/
+
+.loading-layer {
+  text-align: center;
+  margin-top: 320rpx;
+}
+
+.weui-loadmore {
+  margin: 0 auto;
+  color:#b3c0c9;
 }
