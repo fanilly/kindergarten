@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/realNameCertification/realNameCertification",
     "pages/identity/identity",
+    "pages/index/index",
     "pages/skillCertification/skillCertification",
     "pages/calendar/calendar",
     "pages/me/me",
@@ -9,7 +10,6 @@
     "pages/addResume/addResume",
     "pages/resumeCertification/resumeCertification",
     "pages/diplomaCertification/diplomaCertification",
-    "pages/realNameCertification/realNameCertification",
     "pages/orderHistoryDetail/orderHistoryDetail",
 
     "pages/orderHistory/orderHistory",

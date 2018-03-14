@@ -1,5 +1,6 @@
 /**app.wxss**/
 
+@import 'styles/weui.wxss';
 page {
   background-color: #eff3f6;
   display: flex;
@@ -135,6 +136,7 @@ page {
 .text-center {
   text-align: center;
 }
+
 
 /*order-list*/
 
@@ -420,14 +422,17 @@ page {
 .cer-input-wapper .picker-content text {
   padding-right: 20rpx;
 }
+
+
 /*文本域*/
+
 .cer-textarea-title {
   display: flex;
   height: 40rpx;
   font-size: 32rpx;
   color: #555;
   line-height: 42rpx;
-  padding:20rpx 15rpx;
+  padding: 20rpx 15rpx;
 }
 
 .cer-textarea-title view:first-child {
@@ -448,7 +453,7 @@ page {
 }
 
 .cer-textarea-content textarea {
-  width:100%;
+  width: 100%;
   padding: 15rpx;
   box-sizing: border-box;
   height: 300rpx;
@@ -466,10 +471,10 @@ page {
   font-size: 32rpx;
   text-align: center;
   width: 96%;
-  margin:50rpx auto;
+  margin: 50rpx auto;
   height: 80rpx;
   line-height: 80rpx;
-  color:#fff;
+  color: #fff;
   background-image: linear-gradient(to right, #0eaf9c, #00ad99);
   border-radius: 10rpx;
   box-shadow: 0 0 12px #ccc;
