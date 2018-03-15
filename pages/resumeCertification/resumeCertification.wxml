@@ -1,18 +1,14 @@
 <!--pages/resumeCertification/resumeCertification.wxml-->
-<view class="wapper">
-  <view class="resume-item">
-    <view class="f32 gray01 cycle">2018.08-2019.09</view>
-    <view class="f32 gray01 title">智多星幼儿园/体育教师</view>
-    <view class="f28 gray02 content">主要负责的是什么</view>
-    <view class="edit main-color f28">
+<import src="../../view/loaderLayer.wxml" />
+<template wx:if="{{!loaded}}" is="loader-leyer" data="{{loadData}}"></template>
+<view wx:if="{{loaded}}" class="wapper">
+  <view wx:for="{{lists}}" wx:key="{{index}}" class="resume-item">
+    <view class="f32 gray01 cycle">{{item.data3}} 至 {{item.data4}}</view>
+    <view class="f32 gray01 title">{{item.data1}}/{{item.data2}}</view>
+    <view class="f28 gray02 content">{{item.data5}}</view>
+    <view class="edit main-color f28" data-msgid="{{item.id}}" bindtap="handleGoEdit">
       <image src="../../assets/edit.png" style="width:21rpx;height: 22rpx;margin-right: 10rpx;"></image>编辑</view>
-  </view>
-  <view class="resume-item">
-    <view class="f32 gray01 cycle">2018.08-2019.09</view>
-    <view class="f32 gray01 title">智多星幼儿园/体育教师</view>
-    <view class="f28 gray02 content">主要负责的是什么</view>
-    <view class="edit main-color f28">
-      <image src="../../assets/edit.png" style="width:21rpx;height: 22rpx;margin-right: 10rpx;"></image>编辑</view>
+    <view class="status f24 gray06">{{item.status == 1 ? '审核中' : item.status == 2 ? '已通过' : '未通过'}}</view>
   </view>
   <view class="public-subbtn" bindtap="handleAddResume">添加更多工作经历</view>
 </view>

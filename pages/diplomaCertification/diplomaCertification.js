@@ -31,7 +31,7 @@ Page({
 
   //生命周期函数--监听页面加载
   onLoad(options) {
-    let webUserInfo = 0;
+    let webUserInfo = app.globalData.webUserInfo;
     //如果学历认证状态不为零 证明曾传入认证信息 本次为修改
     if (webUserInfo.education != 0) {
       console.log('-------- 判定本次为修改学历认证信息 开始获取历史信息');

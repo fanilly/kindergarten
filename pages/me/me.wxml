@@ -57,7 +57,7 @@
     <view class="evaluation-content">
       <navigator url="../orderHistory/orderHistory" hover-class="none">
         <image src="../../assets/me_icon06.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
-        <view class="f28 main-color align-center">666</view>
+        <view class="f28 main-color align-center">{{webUserInfo.good}}</view>
         <image src="../../assets/line.png" class="line"></image>
       </navigator>
       <navigator url="../orderHistory/orderHistory" hover-class="none">
@@ -67,13 +67,13 @@
       </navigator>
       <navigator url="../orderHistory/orderHistory" hover-class="none">
         <image src="../../assets/me_icon07.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
-        <view class="f28 red-color align-center">12</view>
+        <view class="f28 red-color align-center">{{webUserInfo.bad}}</view>
       </navigator>
     </view>
   </view>
   <!-- 列表 -->
   <view class="list-wapper">
-    <navigator url="../deposit/deposit" class="list-item">
+    <navigator url="../deposit/deposit" class="list-item" wx:if="{{!DISABLE_RECHARGE}}">
       <view>
         <image src="../../assets/deposited.png" style="width:36rpx;height: 36rpx;"></image>
       </view>
@@ -92,7 +92,7 @@
         <image src="../../assets/arrow.png" style="width: 25rpx;height: 36rpx;"></image>
       </view>
     </navigator>
-    <navigator url="" class="list-item">
+    <navigator url="../about/about" class="list-item">
       <view>
         <image src="../../assets/about.png" style="width:36rpx;height: 36rpx;"></image>
       </view>

@@ -5,7 +5,7 @@
     <view class="header-content align-center">
       <view class="money">
         <text class="f28">￥</text>
-        9999.00
+        {{webUserInfo.commission}}
         <text class="f24">元</text>
       </view>
       <view class="info f28 y-color">我的收益</view>
@@ -50,7 +50,7 @@
   <view class="align-center f36 b-color r-title">{{isRecharge?'用户充值':'用户提现'}}</view>
   <view class="line"></view>
   <view class="input-wapper b-color">
-    <input placeholder-style="color:#8fa4a2" placeholder="{{isRecharge?'输入充值金额':'输入提现金额'}}" />
+    <input placeholder-style="color:#8fa4a2" type="number" bindinput="handleRecordMoeny" placeholder="{{isRecharge?'输入充值金额':'输入提现金额'}}" />
   </view>
   <view class="btn" bindtap="handleConfirm">{{isRecharge?'确认充值':'确认提现'}}</view>
   <view class="close" bindtap="handleClosePopup">

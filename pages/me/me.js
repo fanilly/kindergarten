@@ -82,7 +82,7 @@ Page({
         url: '../resumeCertification/resumeCertification'
       }];
       cerBtns.forEach(item => {
-        if (item.status == '未认证') surplus++;
+        if (item.status == '未认证' || item.status == '审核中' || item.status == '未通过') surplus++;
       });
     } else if (webUserInfo.roleType == 2) { //司机
       btns = [{
@@ -115,7 +115,7 @@ Page({
         url: '../skillCertification/skillCertification'
       }];
       cerBtns.forEach(item => {
-        if (item.status == '未认证') surplus++;
+        if (item.status == '未认证' || item.status == '审核中' || item.status == '未通过') surplus++;
       });
     }
     this.setData({

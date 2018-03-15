@@ -6,7 +6,7 @@
       <image src="../../assets/cer_icon05.png"></image>
     </view>
     <view class="cer-input-wapper">
-      <input placeholder-style="color:#555" name="corporateName" placeholder="请填写公司名称" />
+      <input placeholder-style="color:#555" name="corporateName" value="{{values.corporateName}}" placeholder="请填写公司名称" />
     </view>
   </view>
   <!-- 你的职位 -->
@@ -15,7 +15,7 @@
       <image src="../../assets/cer_icon05.png"></image>
     </view>
     <view class="cer-input-wapper">
-      <input placeholder-style="color:#555" name="job" placeholder="请填写你的职位" />
+      <input placeholder-style="color:#555" name="job" value="{{values.job}}" placeholder="请填写你的职位" />
     </view>
   </view>
   <view class="placeholder-box50"></view>
@@ -55,8 +55,8 @@
       <view>工作内容</view>
     </view>
     <view class="cer-textarea-content">
-      <textarea placeholder="工作内容" name="jobContent" placeholder-style="color:#555" />
-      <view class="count-num-wapper">0/200</view>
+      <textarea placeholder="工作内容" bindtap="handleRecordDescLen" value="{{values.jobContent}}" name="jobContent" placeholder-style="color:#555" />
+      <view class="count-num-wapper">{{descLen}}/200</view>
     </view>
   </view>
   <button formType="submit" class="public-subbtn">提交</button>

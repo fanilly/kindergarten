@@ -1,8 +1,12 @@
 // pages/profit/profit.js
+import { DISABLE_RECHARGE } from '../../config.js';
+const app = getApp();
+let money;
 Page({
 
   data: {
-    isRecharge:true, //true 充值 false 提现
+    webUserInfo: null,
+    isRecharge: true, //true 充值 false 提现
     mask: {
       opacity: 0,
       display: 'none'
@@ -13,28 +17,54 @@ Page({
     }
   },
 
+  handleRecordMoeny(e) {
+    money = e.detail.value;
+  },
+
   // 生命周期函数--监听页面加载
   onLoad(options) {
-
+    this.setData({
+      webUserInfo: app.globalData.webUserInfo
+    });
   },
 
   //点击确定
-  handleConfirm(){
-    if(this.data.isRecharge){ //充值
+  handleConfirm() {
+    if (this.data.isRecharge) { //充值
 
-    }else{ //提现
-
+    } else { //提现
+      if (money <= 0) {
+        wx.showModal({
+          content: '提现金额必须大于零',
+          showCancel: false
+        });
+      } else if (money * 1 > this.data.webUserInfo.commission * 1) {
+        wx.showModal({
+          content: '余额不足',
+          showCancel: false
+        });
+      } else {
+        
+      }
     }
   },
 
   //充值提现
   handleRechargeOrWithdrawals(e) {
-    this.showPopup();
     if (e.currentTarget.dataset.rel == 'recharge') { // 充值
-      this.setData({
-        isRecharge: true
-      });
+      if (DISABLE_RECHARGE) {
+        wx.showModal({
+          content: '此功能暂未开放',
+          showCancel: false
+        });
+      } else {
+        this.showPopup();
+        this.setData({
+          isRecharge: true
+        });
+      }
     } else { //提现
+      this.showPopup();
       this.setData({
         isRecharge: false
       });

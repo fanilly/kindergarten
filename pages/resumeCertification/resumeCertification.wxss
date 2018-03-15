@@ -35,6 +35,12 @@
   top: 15rpx;
 }
 
+.status {
+  position: absolute;
+  right: 15rpx;
+  top: 54rpx;
+}
+
 .public-subbtn {
   margin-top: 20rpx;
   width: 100%;
