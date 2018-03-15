@@ -7,11 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    lists:[]
+    lists: []
   },
 
   // 生命周期函数--监听页面加载
   onLoad(options) {
+    wx.showLoading({ title: '加载中', mask: true });
     wx.request({
       url: TASK_LIST_URL,
       data: {
@@ -20,8 +21,9 @@ Page({
       success: res => {
         console.log(res);
         this.setData({
-          lists:res.data.data || []
+          lists: res.data.data || []
         });
+        wx.hideLoading();
       },
       fail: err => {
 
@@ -29,23 +31,8 @@ Page({
     });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  // 生命周期函数--监听页面显示
   onShow() {
-
-  },
-
-  onPullDownRefresh() {
-
-  },
-
-  onReachBottom() {
-
-  },
-
-  // 用户点击右上角分享
-  onShareAppMessage() {
 
   }
 });

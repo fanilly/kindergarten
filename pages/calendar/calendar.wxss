@@ -36,7 +36,7 @@ page {
 }
 
 .calendar-content {
-  padding:0 15rpx;
+  padding: 0 15rpx;
 }
 
 .days {
@@ -47,6 +47,30 @@ page {
   text-align: center;
   overflow: hidden;
   position: relative;
+}
+
+.no-completed {
+  background-color: #00ae99;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #fff;
+}
+
+.completed {
+  background-color: #b3c0c9;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #fff;
+}
+
+.days .flag {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  text-align: center;
 }
 
 .pointer {

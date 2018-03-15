@@ -30,21 +30,31 @@ Page({
       nowDay: today
     });
 
+    this.renderTaskCalendar(curYear, curMonth);
 
-    this.calculateEmptyGrids(curYear, curMonth);
-    this.calculateDays(curYear, curMonth);
   },
 
   renderTaskCalendar(year, month) {
+    wx.showLoading({ title: '加载中', mask: true });
+    tasks = [];
     wx.request({
       url: CALENDAR_URL,
       data: {
         userId: app.globalData.userID,
-        month: `${curYear}-${curMonth}`
+        month: `${year}-${month}`
       },
       success: res => {
         console.log(res);
-        tasks = res.data.data;
+        tasks = res.data.data || [];
+
+        this.calculateEmptyGrids(year, month);
+        this.calculateDays(year, month);
+
+        this.setData({
+          curYear: year,
+          curMonth: month
+        });
+        wx.hideLoading();
       }
     });
   },
@@ -81,15 +91,37 @@ Page({
 
   //计算当月的天数
   calculateDays(year, month) {
-    let days = [];
+    let days = [],
+      tempTask = [];
 
     const thisMonthDays = this.getThisMonthDays(year, month);
+    for (let j = 0; j < tasks.length; j++) {
+      let activeDays = parseInt(tasks[j].activeDays),
+        activeTime = parseInt(tasks[j].activeTime.substr(-2));
+      for (let i = 0; i < activeDays; i++) {
+        tempTask.push({
+          days: activeTime + i,
+          id: tasks[j].activeId,
+          status: tasks[j].taskStatus
+        });
+      }
+    }
+
+    console.log(tempTask);
 
     for (let i = 1; i <= thisMonthDays; i++) {
-      days.push({
+      let item = {
         day: i,
         choosed: false
-      });
+      };
+      for (let j = 0; j < tempTask.length; j++) {
+        if (i == tempTask[j].days) {
+          item.id = tempTask[j].id;
+          item.status = tempTask[j].status;
+          break;
+        }
+      }
+      days.push(item);
     }
 
     this.setData({ days });
@@ -111,14 +143,8 @@ Page({
         newMonth = 12;
       }
 
-      this.calculateDays(newYear, newMonth);
-      this.calculateEmptyGrids(newYear, newMonth);
-
-      this.setData({
-        curYear: newYear,
-        curMonth: newMonth
-      });
-
+      //--------------------------------------
+      this.renderTaskCalendar(newYear, newMonth);
     } else { //下一月
       newMonth = curMonth + 1;
       newYear = curYear;
@@ -128,25 +154,20 @@ Page({
         newMonth = 1;
       }
 
-      this.calculateDays(newYear, newMonth);
-      this.calculateEmptyGrids(newYear, newMonth);
-
-      this.setData({
-        curYear: newYear,
-        curMonth: newMonth
-      });
+      this.renderTaskCalendar(newYear, newMonth);
     }
   },
 
   //点击某一天
   handleTapDayItem(e) {
     console.log(this.data);
-    const idx = e.currentTarget.dataset.idx;
-    const days = this.data.days;
-    days[idx].choosed = !days[idx].choosed;
-    this.setData({
-      days,
-    });
+    console.log(e);
+    let taskID = e.currentTarget.dataset.id;
+    if (taskID) {
+      wx.navigateTo({
+        url: `../orderHistoryDetail/orderHistoryDetail?taskID=${taskID}`
+      });
+    }
   },
 
   //使用日历选择器选择

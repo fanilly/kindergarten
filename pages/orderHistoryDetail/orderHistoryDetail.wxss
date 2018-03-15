@@ -1,6 +1,29 @@
 /* pages/orderHistoryDetail/orderHistoryDetail.wxss */
+
 .is-component {
-	position: absolute;
-	right: 50rpx;
-	top:0;
+  position: absolute;
+  right: 50rpx;
+  top: 0;
+}
+
+.tb-btns {
+  display: block;
+  height: auto;
+  padding-bottom: 20rpx;
+}
+
+.tb-btns:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.tb-btns .tb-btns-item {
+  width: 33.33%;
+  float: left;
+  overflow: hidden;
+}
+
+.tb-btns .tb-btns-item:nth-child(3) image {
+  display: none;
 }
