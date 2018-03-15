@@ -51,6 +51,9 @@ const HOST = 'tzn.honghuseo.cn',
     //抢单
     TASK_GO_URL: `${API}/task/GO`,
 
+    //日历
+    CALENDAR_URL: `${API}/task/calendar`,
+
   };
 
 module.exports = CONFIG;

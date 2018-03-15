@@ -35,7 +35,7 @@
         <image src="../../assets/me_icon01.png" style="width:36rpx;height: 36rpx;margin-top:15rpx;"></image>
       </view>
       <view class="f28 gray02">信息认证</view>
-      <view class="f24 gray06">您还有{{surplus}}项未认证</view>
+      <view class="f24 gray06">{{surplus!=0?'您还有'+surplus+'项认证未完成':'您已通过认证全部信息认证'}}</view>
     </view>
     <view class="info-content">
       <navigator wx:for="{{cerBtns}}" wx:key="{{index}}" url="{{item.url}}" hover-class="none">
@@ -61,7 +61,7 @@
         <image src="../../assets/line.png" class="line"></image>
       </navigator>
       <navigator url="../orderHistory/orderHistory" hover-class="none">
-        <view class="f60 b-color align-center mt46">98%</view>
+        <view class="f60 b-color align-center mt46">{{webUserInfo.appriases}}%</view>
         <view class="f24 gray06 align-center">综合满意度</view>
         <image class="line" src="../../assets/line.png"></image>
       </navigator>

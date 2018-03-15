@@ -29,7 +29,7 @@
       <view class="clear-fix">
         <view wx:if="{{hasEmptyGrid}}" class="days" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}"> </view>
         <view class="days f28 gray03" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="handleTapDayItem">
-          <view class="fs28 {{item.choosed ? 'border-radius pink-bg' : ''}}">{{item.day<10?'0'+item.day:item.day}} <view class="f24" wx:if="{{item.aa}}">未完成</view></view>
+          <view class="fs28 {{item.choosed ? 'border-radius pink-bg' : ''}}">{{item.day<10?'0'+item.day:item.day}} <view class="f24" wx:if="{{item.aa}}">未执行</view></view>
           <!-- 在当天的位置显示标志 -->
           <view wx:if="{{item.day==nowDay&&nowMonth==curMonth&&nowYear==curYear}}" class="pointer red-bg"></view>
         </view>

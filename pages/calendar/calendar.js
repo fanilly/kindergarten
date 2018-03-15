@@ -1,3 +1,6 @@
+import { CALENDAR_URL } from '../../config.js';
+const app = getApp();
+let tasks = [];
 Page({
 
   data: {
@@ -17,15 +20,32 @@ Page({
       curYear = date.getFullYear(),
       curMonth = date.getMonth() + 1,
       today = date.getDate();
+    console.log(curMonth);
 
-    this.calculateEmptyGrids(curYear, curMonth);
-    this.calculateDays(curYear, curMonth);
     this.setData({
       curYear,
       curMonth,
       nowYear: curYear,
       nowMonth: curMonth,
       nowDay: today
+    });
+
+
+    this.calculateEmptyGrids(curYear, curMonth);
+    this.calculateDays(curYear, curMonth);
+  },
+
+  renderTaskCalendar(year, month) {
+    wx.request({
+      url: CALENDAR_URL,
+      data: {
+        userId: app.globalData.userID,
+        month: `${curYear}-${curMonth}`
+      },
+      success: res => {
+        console.log(res);
+        tasks = res.data.data;
+      }
     });
   },
 
