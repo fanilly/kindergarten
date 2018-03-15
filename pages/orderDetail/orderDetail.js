@@ -43,6 +43,42 @@ Page({
 
   //点击确认抢单
   handleConfirmGrab() {
+    //如果是教练需实名认证通过方可抢单
+    //如果是司机 需实名认证+技能认证+车辆认证皆通过
+    const webUserInfo = app.globalData.webUserInfo;
+    if (webUserInfo.roleType == 1) { //教练
+      if (webUserInfo.veracity != 2) {
+        wx.showModal({
+          content: '实名认证未完成（实名认证完成后方可抢单）',
+          showCancel: false
+        });
+      } else {
+        this.startGrab();
+      }
+    } else if (webUserInfo.roleType == 2) { //司机
+      if (webUserInfo.veracity != 2) {
+        wx.showModal({
+          content: '实名认证未完成（实名认证、技能认证、车辆认证都完成后方可抢单）',
+          showCancel: false
+        });
+      } else if (webUserInfo.qualification != 2) {
+        wx.showModal({
+          content: '车辆认证未完成（实名认证、技能认证、车辆认证都完成后方可抢单）',
+          showCancel: false
+        });
+      } else if (webUserInfo.education != 2) {
+        wx.showModal({
+          content: '技能认证未完成（实名认证、技能认证、车辆认证都完成后方可抢单）',
+          showCancel: false
+        });
+      } else {
+        this.startGrab();
+      }
+    }
+
+  },
+
+  startGrab() {
     wx.showLoading({ title: '抢单中' });
     wx.request({
       url: TASK_GO_URL,

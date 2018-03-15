@@ -17,7 +17,7 @@
           <image src="../../assets/c_icon07.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
         </view>
         <view class="f28 gray01">集合时间：</view>
-        <view class="f26 gray02">2018-02-01 早上： 7:00</view>
+        <view class="f26 gray02">{{datas.timeInfo}}</view>
       </view>
       <view class="c-order-item">
         <view>
