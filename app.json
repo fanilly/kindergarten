@@ -7,6 +7,7 @@
     "pages/skillCertification/skillCertification",
     "pages/calendar/calendar",
     "pages/me/me",
+    "pages/about/about",
     
     "pages/addResume/addResume",
     "pages/resumeCertification/resumeCertification",

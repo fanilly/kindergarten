@@ -4,7 +4,7 @@
   <view class="c-title">
     诚信度：
     <image src="../../assets/c_icon06.png" style="height: 36rpx;width:36rpx;vertical-align: middle;display: inline-block;position: relative;top:-6rpx"></image>
-    <text>66</text>
+    <text>{{webUserInfo.honest}}</text>
   </view>
   <view class="text-block">
     <view class="tb-title">

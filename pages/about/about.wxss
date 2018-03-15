@@ -1,0 +1,20 @@
+/* pages/about/about.wxss */
+page {
+	box-sizing: border-box;
+	background-color: #fff;
+	padding: 30rpx;
+}
+
+.title1 {
+	font-size: 34rpx;
+	text-align:center;
+	padding: 80rpx 0;
+}
+
+.a-c {
+	font-size: 28rpx;
+	color:#666;
+	text-indent: 2em;
+	line-height: 42rpx;
+	padding-bottom: 20rpx;
+}
