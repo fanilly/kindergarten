@@ -36,6 +36,9 @@ const HOST = 'tzn.honghuseo.cn',
     //认证信息
     CERTIFICATION_URL: `${API}/user/certification`,
 
+    //认证信息
+    GET_CERTIFICATION_URL: `${API}/user/getCertification`,
+
     //绑定手机号
     BIND_PHONE_URL: `${API}/user/mobile`,
 

@@ -247,7 +247,7 @@ Page({
               console.log('-------- 成功更新本地，该用户已实名认证');
               wx.showToast({
                 title: '提交成功',
-                image: './assets/success.png',
+                image: '../../assets/success.png',
                 duration: 1500
               });
               if (source == 'no') {
@@ -265,8 +265,8 @@ Page({
             fail: err => {
               wx.hideLoading();
               wx.showToast({
-                title: `网络异常`,
-                image: './assets/warning.png',
+                title: '网络异常',
+                image: '../../assets/warning.png',
                 duration: 1500
               });
             }
