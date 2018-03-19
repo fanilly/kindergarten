@@ -40,4 +40,16 @@
       </navigator>
     </view>
   </block>
+  <block wx:if="{{loadingStatus == 1}}">
+    <view class="loading-layer">
+      <image class="weui-loading test" src="../../assets/timg.png" style="width: 260rpx;height: 195rpx;"></image>
+      <view class="f28 gray06">加载中</view>
+    </view>
+  </block>
+  <block wx:if="{{loadingStatus == 0}}">
+    <view class="loading-layer">
+      <image src="../../assets/loading.png" style="width: 230rpx;height: 213rpx;"></image>
+      <view class="f28 gray06">~~ 空空如也 ~~</view>
+    </view>
+  </block>
 </view>

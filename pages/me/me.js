@@ -20,7 +20,7 @@ Page({
 
   // 生命周期函数--监听页面显示
   onShow() {
-    let lv,
+    let lv = '..',
       btns,
       cerBtns,
       surplus = 0, //剩余几项未认证
@@ -105,13 +105,13 @@ Page({
         url: '../realNameCertification/realNameCertification?type=1&source=yes'
       }, {
         name: '车辆认证',
-        status: webUserInfo.qualification == 0 ? '未认证' : webUserInfo.qualification == 1 ? '审核中' : webUserInfo.qualification == 2 ? '已完成' : '未通过',
-        icon: `../../assets/me_icon08${webUserInfo.qualification == 2 ?'_c':''}.png`,
+        status: webUserInfo.education == 0 ? '未认证' : webUserInfo.education == 1 ? '审核中' : webUserInfo.education == 2 ? '已完成' : '未通过',
+        icon: `../../assets/me_icon08${webUserInfo.education == 2 ?'_c':''}.png`,
         url: '../carCertification/carCertification'
       }, {
         name: '技能认证',
-        status: webUserInfo.education == 0 ? '未认证' : webUserInfo.education == 1 ? '审核中' : webUserInfo.education == 2 ? '已完成' : '未通过',
-        icon: `../../assets/me_icon09${webUserInfo.education == 2 ?'_c':''}.png`,
+        status: webUserInfo.qualification == 0 ? '未认证' : webUserInfo.qualification == 1 ? '审核中' : webUserInfo.qualification == 2 ? '已完成' : '未通过',
+        icon: `../../assets/me_icon09${webUserInfo.qualification == 2 ?'_c':''}.png`,
         url: '../skillCertification/skillCertification'
       }];
       cerBtns.forEach(item => {

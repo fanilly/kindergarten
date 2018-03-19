@@ -1,7 +1,7 @@
 // pages/skillCertification/skillCertification.js
 import { BASE_URL, CERTIFICATION_URL, GET_CERTIFICATION_URL, USER_INFO_URL } from '../../config.js';
 import uploadImg from '../../request/uploadImg.js';
-let recordSkillCertification;
+let recordCarCertification;
 const app = getApp();
 Page({
 
@@ -20,31 +20,38 @@ Page({
       url: '',
       isNews: true,
       showControl: false
+    }, {
+      url: '',
+      isNews: true,
+      showControl: false
     }]
   },
 
   // 生命周期函数--监听页面加载
   onLoad: function(options) {
     let webUserInfo = app.globalData.webUserInfo;
-    if (webUserInfo.qualification != 0) {
-      console.log('-------- 判定本次为修改技能认证信息 开始获取历史信息');
+    if (webUserInfo.education != 0) {
+      console.log('-------- 判定本次为修改车辆认证信息 开始获取历史信息');
       wx.request({
         url: GET_CERTIFICATION_URL,
         data: {
-          type: 4,
+          type: 3,
           userId: app.globalData.userID
         },
         success: res => {
-          console.log('-------- 成功获取到历史提交的技能认证信息 并 渲染至页面');
+          console.log('-------- 成功获取到历史提交的车辆认证信息 并 渲染至页面');
           console.log(res);
-          recordSkillCertification = res.data.data[0];
+          recordCarCertification = res.data.data[0];
           let files = this.data.files;
-          files[0].url = recordSkillCertification.data1;
-          files[0].thubms = recordSkillCertification.data2;
+          files[0].url = recordCarCertification.data1;
+          files[0].thubms = recordCarCertification.data2;
           files[0].isNews = false;
-          files[1].url = recordSkillCertification.data3;
-          files[1].thubms = recordSkillCertification.data4;
+          files[1].url = recordCarCertification.data3;
+          files[1].thubms = recordCarCertification.data4;
           files[1].isNews = false;
+          files[2].url = recordCarCertification.data5;
+          files[2].thubms = recordCarCertification.data6;
+          files[2].isNews = false;
           this.setData({
             files,
             loaded: true
@@ -80,34 +87,57 @@ Page({
     let files = this.data.files,
       uploadFiles = [],
       postData = {
-        type: 4,
+        type: 3,
         userId: app.globalData.userID
       };
-    if (recordSkillCertification) postData.dataId = recordSkillCertification.id;
-    if (recordSkillCertification && files[0].url == recordSkillCertification.data1 && files[1].url == recordSkillCertification.data3) {
+    if (recordCarCertification) postData.dataId = recordCarCertification.id;
+    if (recordCarCertification && files[0].url == recordCarCertification.data1 && files[1].url == recordCarCertification.data3 && files[2].url == recordCarCertification.data5) {
       this.showMsg('信息未发生改变，无需重复上传！');
     } else {
       if (!files[0].url) {
-        this.showMsg('请上传驾照首页照片');
+        this.showMsg('请上传行驶证照片');
       } else if (!files[1].url) {
-        this.showMsg('请上传驾照副页照片');
+        this.showMsg('请上传车辆头部照片');
+      } else if (!files[2].url) {
+        this.showMsg('请上传车辆侧面照片（车门方向）');
       } else {
         wx.showLoading({ title: '上传中', mask: true });
         if (files[0].isNews) {
           uploadImg(files[0].url, res => {
+            console.log('-------- 开始上传行驶证照片');
             let result = JSON.parse(res.data);
             console.log(result);
             if (result.status == 1) {
               postData.data1 = BASE_URL + result.data.Image;
               postData.data2 = BASE_URL + result.data.Thumbs;
               if (files[1].isNews) {
+                console.log('');
                 uploadImg(files[1].url, res => {
+                  console.log('-------- 开始上传车头照片');
                   let result = JSON.parse(res.data);
                   console.log(result);
                   if (result.status == 1) {
                     postData.data3 = BASE_URL + result.data.Image;
                     postData.data4 = BASE_URL + result.data.Thumbs;
-                    this.certification(postData);
+                    if (files[2].isNews) {
+                      uploadImg(files[2].url, res => {
+                        console.log('-------- 开始上传车侧面照片');
+                        let result = JSON.parse(res.data);
+                        console.log(result);
+                        if (result.status == 1) {
+                          postData.data5 = BASE_URL + result.data.Image;
+                          postData.data6 = BASE_URL + result.data.Thumbs;
+
+                          this.certification(postData);
+                        } else {
+                          this.showErr();
+                        }
+                      });
+                    } else {
+                      postData.data5 = files[2].url;
+                      postData.data6 = files[2].thubms;
+                      this.certification(postData);
+                    }
                   } else {
                     this.showErr();
                   }
@@ -115,7 +145,24 @@ Page({
               } else {
                 postData.data3 = files[1].url;
                 postData.data4 = files[1].thubms;
-                this.certification(postData);
+                if (files[2].isNews) {
+                  uploadImg(files[2].url, res => {
+                    console.log('-------- 开始上传车侧面照片');
+                    let result = JSON.parse(res.data);
+                    console.log(result);
+                    if (result.status == 1) {
+                      postData.data5 = BASE_URL + result.data.Image;
+                      postData.data6 = BASE_URL + result.data.Thumbs;
+                      this.certification(postData);
+                    } else {
+                      this.showErr();
+                    }
+                  });
+                } else {
+                  postData.data5 = files[2].url;
+                  postData.data6 = files[2].thubms;
+                  this.certification(postData);
+                }
               }
             } else {
               this.showErr();
@@ -126,20 +173,54 @@ Page({
           postData.data2 = files[0].thubms;
           if (files[1].isNews) {
             uploadImg(files[1].url, res => {
+              console.log('-------- 开始上传车头照片');
               let result = JSON.parse(res.data);
               console.log(result);
               if (result.status == 1) {
                 postData.data3 = BASE_URL + result.data.Image;
                 postData.data4 = BASE_URL + result.data.Thumbs;
-                this.certification(postData);
+                if (files[2].isNews) {
+                  uploadImg(files[2].url, res => {
+                    console.log('-------- 开始上传车侧面照片');
+                    let result = JSON.parse(res.data);
+                    console.log(result);
+                    if (result.status == 1) {
+                      postData.data5 = BASE_URL + result.data.Image;
+                      postData.data6 = BASE_URL + result.data.Thumbs;
+
+                      this.certification(postData);
+                    } else {
+                      this.showErr();
+                    }
+                  });
+                } else {
+                  postData.data5 = files[2].url;
+                  postData.data6 = files[2].thubms;
+                  this.certification(postData);
+                }
               } else {
                 this.showErr();
               }
             });
           } else {
-            postData.data3 = files[1].url;
-            postData.data4 = files[1].thubms;
-            this.certification(postData);
+            if (files[2].isNews) {
+              uploadImg(files[2].url, res => {
+                console.log('-------- 开始上传车侧面照片');
+                let result = JSON.parse(res.data);
+                console.log(result);
+                if (result.status == 1) {
+                  postData.data5 = BASE_URL + result.data.Image;
+                  postData.data6 = BASE_URL + result.data.Thumbs;
+                  this.certification(postData);
+                } else {
+                  this.showErr();
+                }
+              });
+            } else {
+              postData.data5 = files[2].url;
+              postData.data6 = files[2].thubms;
+              this.certification(postData);
+            }
           }
         }
       }

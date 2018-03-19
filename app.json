@@ -3,8 +3,11 @@
     "pages/identity/identity",
     "pages/index/index",
     "pages/agreement/agreement",
+    
     "pages/realNameCertification/realNameCertification",
     "pages/skillCertification/skillCertification",
+    "pages/carCertification/carCertification",
+
     "pages/calendar/calendar",
     "pages/me/me",
     "pages/about/about",
