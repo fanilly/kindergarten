@@ -79,7 +79,10 @@
 }
 
 .btns navigator view:first-child {
-  padding-top: 42rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 42rpx 12rpx 0;
 }
 
 .btns navigator view:nth-child(2) {

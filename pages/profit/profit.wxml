@@ -28,19 +28,30 @@
     <image src="../../assets/history.png" style="width: 36rpx;height: 36rpx;margin-right: 10rpx;"></image>
     <text>历史记录</text>
   </view>
-  <view class="history-content">
-    <block wx:for="abcdefghijklmn" wx:key="{{index}}">
+  <view class="history-content" wx:if="{{loadingStatus == 2}}">
+    <block wx:for="{{lists}}" wx:key="{{index}}">
       <view class="history-item">
         <view class="lside">
-          <view class="f32">提现</view>
-          <view class="f28 gray06">2018-02-09 12:30:25</view>
+          <view class="f32">{{item.dataSrc}}</view>
+          <view class="f28 gray06">{{item.createTime}}</view>
         </view>
-        <view class="rside red-color">-200
+        <view class="rside {{item.dataSrc == '提现' ? 'red-color' : 'main-color'}}">{{item.dataSrc == '提现' ? '-'+item.money : '+' + item.money}}
           <text class="f24">元</text>
         </view>
       </view>
     </block>
+    <text class="f28 gray06 text-center remark">已加载全部数据</text>
   </view>
+</view>
+<block wx:if="{{loadingStatus == 1}}">
+  <view class="loading-layer">
+    <image class="weui-loading test" src="../../assets/timg.png" style="width: 260rpx;height: 195rpx;"></image>
+    <view class="f28 gray06">加载中</view>
+  </view>
+</block>
+<view class="no-data" wx:if="{{loadingStatus == 0}}">
+  <image src="../../assets/null.png" style="width:191rpx;height: 197rpx;"></image>
+  <view class="f24 gray06">暂无历史记录</view>
 </view>
 <view class="mask" style="opacity: {{mask.opacity}};display: {{mask.display}};"></view>
 <view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">

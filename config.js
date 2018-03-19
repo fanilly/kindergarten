@@ -54,6 +54,15 @@ const HOST = 'tzn.honghuseo.cn',
     //日历
     CALENDAR_URL: `${API}/task/calendar`,
 
+    //流水列表
+    CASH_LIST_URL: `${API}/user/cashList`,
+
+    //提现
+    CASH_URL: `${API}/user/cash`,
+
+    //提现
+    OLD_TASK_URL: `${API}/task/oldTask`,
+
   };
 
 module.exports = CONFIG;

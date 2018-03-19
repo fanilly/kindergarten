@@ -256,7 +256,7 @@ Page({
       tempFiles.push(item.url);
     });
     wx.previewImage({
-      current: e.currentTarget.dataset.index, // 当前显示图片的http链接
+      current: tempFiles[e.currentTarget.dataset.index], // 当前显示图片的http链接
       urls: tempFiles // 需要预览的图片http链接列表
     });
   }

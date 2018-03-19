@@ -38,7 +38,7 @@ Page({
         }
       });
     } else {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../addResume/addResume'
       });
     }

@@ -1,12 +1,14 @@
 // pages/profit/profit.js
-import { DISABLE_RECHARGE } from '../../config.js';
+import { DISABLE_RECHARGE, CASH_LIST_URL, CASH_URL } from '../../config.js';
 const app = getApp();
 let money;
 Page({
 
   data: {
     webUserInfo: null,
+    loadingStatus: 1,
     isRecharge: true, //true 充值 false 提现
+    lists: [],
     mask: {
       opacity: 0,
       display: 'none'
@@ -26,6 +28,28 @@ Page({
     this.setData({
       webUserInfo: app.globalData.webUserInfo
     });
+
+    wx.request({
+      url: CASH_LIST_URL,
+      data: {
+        userId: app.globalData.userID
+      },
+      success: res => {
+        console.log(res);
+        if (!res.data.data || res.data.data.length <= 0) {
+          this.setData({
+            loadingStatus: 0,
+            lists: []
+          });
+        } else {
+          this.setData({
+            lists: res.data.data,
+            loadingStatus: 2
+          });
+        }
+      }
+    });
+
   },
 
   //点击确定
@@ -44,7 +68,47 @@ Page({
           showCancel: false
         });
       } else {
-        
+        wx.showLoading({ title: '提交中', mask: true });
+        wx.request({
+          header: { 'content-type': 'application/x-www-form-urlencoded' },
+          method: 'POST',
+          url: CASH_URL,
+          data: {
+            userId: app.globalData.userID,
+            money: money
+          },
+          success: res => {
+            wx.hideLoading();
+            console.log(app.globalData.userID, money);
+            if (res.data.status == 1) {
+              wx.showModal({
+                content: '恭喜你提现成功，提现金额将在24小时之内发放至您的账户',
+                showCancel: false,
+                success: res => {
+                  if (res.confirm) {
+                    wx.switchTab({
+                      url: '../me/me'
+                    });
+                  }
+                }
+              });
+              app.globalData.webUserInfo.commission = app.globalData.webUserInfo.commission * 1 - money * 1;
+            } else {
+              wx.showToast({
+                title: '提现失败',
+                image: '../../assets/warning.png',
+                duration: 1500
+              });
+            }
+          },
+          fail() {
+            wx.showToast({
+              title: '网络异常',
+              image: '../../assets/warning.png',
+              duration: 1500
+            });
+          }
+        });
       }
     }
   },

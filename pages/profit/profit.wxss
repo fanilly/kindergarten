@@ -151,7 +151,7 @@
 .history-content {
   background-color: #fff;
   padding: 2rpx 15rpx;
-  min-height: 700rpx;
+  min-height: 200rpx;
 }
 
 .history-item {
@@ -178,4 +178,21 @@
   width: 200rpx;
   text-align: right;
   font-size: 36rpx;
+}
+
+.no-data {
+  text-align: center;
+}
+
+.test {
+  background: none;
+}
+
+.loading-layer {
+  margin-top: 100rpx;
+}
+
+.remark {
+  padding: 30rpx 0;
+  display: block;
 }
