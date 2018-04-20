@@ -2,7 +2,7 @@
 <header></header>
 <view class="wapper">
   <block wx:for="{{lists}}" wx:key="{{index}}">
-    <view class="order-list">
+    <view class="order-list" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd" style="{{curIndex == index ? txtStyle : ''}}" data-index="{{index}}">
       <view class="lside">
         <view class="header">
           <view class="ellipsis">{{item.schoolName}}</view>
@@ -40,6 +40,7 @@
       </navigator>
     </view>
   </block>
+  <view class="gray06 f24 text-center nomore" wx:if="{{loadingStatus == 2}}">没有更多任务了</view>
   <block wx:if="{{loadingStatus == 1}}">
     <view class="loading-layer">
       <image class="weui-loading test" src="../../assets/timg.png" style="width: 260rpx;height: 195rpx;"></image>

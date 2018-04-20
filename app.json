@@ -1,8 +1,10 @@
 {
   "pages":[
     "pages/identity/identity",
+    "pages/grab/grab",
     "pages/index/index",
     "pages/agreement/agreement",
+    "pages/result/result",
     
     "pages/realNameCertification/realNameCertification",
     "pages/skillCertification/skillCertification",

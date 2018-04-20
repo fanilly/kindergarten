@@ -45,6 +45,13 @@ Page({
         wx.switchTab({
           url: `/pages/index/index`
         });
+      },
+      fail() {
+        app.testSwitchTab = () => {
+          wx.switchTab({
+            url: `/pages/index/index`
+          });
+        };
       }
     });
   }

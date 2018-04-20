@@ -104,3 +104,21 @@
 .oh-content view text {
   padding-left: 8rpx;
 }
+
+.no-data {
+  text-align: center;
+  margin-top: 300rpx;
+}
+
+.test {
+  background: none;
+}
+
+.loading-layer {
+  margin-top: 300rpx;
+}
+
+.remark {
+  padding: 30rpx 0;
+  display: block;
+}

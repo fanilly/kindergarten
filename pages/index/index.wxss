@@ -1,4 +1,15 @@
 /* pages/index/index.wxss */
+page {
+	overflow-x: hidden;
+}
 .test {
-	background: none;
+  background: none;
+}
+
+.loading-layer {
+  margin-top: 200rpx;
+}
+
+.nomore {
+  padding: 30rpx 0;
 }

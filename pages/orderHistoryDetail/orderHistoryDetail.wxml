@@ -24,7 +24,7 @@
           <image src="../../assets/c_icon08.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
         </view>
         <view class="f28 gray01">活动报酬：</view>
-        <view class="f32 red-color">￥{{datas.money}}</view>
+        <view class="f40 red-color">￥{{datas.task.taskComm}}</view>
       </view>
       <view class="c-order-item">
         <view>
@@ -33,13 +33,13 @@
         <view class="f28 gray01">集合地点：</view>
         <view class="f26 gray02 long-text">{{datas.schoolAddress}}({{datas.schoolName}})</view>
       </view>
-      <view class="c-order-item">
+      <!-- <view class="c-order-item">
         <view>
           <image src="../../assets/c_icon09.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
         </view>
         <view class="f28 gray01">到达地点：</view>
         <view class="f26 gray02 long-text">{{datas.gardenAddress}}({{datas.gardenName}})</view>
-      </view>
+      </view> -->
     </view>
   </view>
   <!-- 活动需求 -->

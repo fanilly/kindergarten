@@ -1,0 +1,23 @@
+/* pages/result/result.wxss */
+
+.result {
+  text-align: center;
+  padding: 200rpx 48rpx;
+}
+
+.result image {
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.result .h1 {
+  font-size: 36rpx;
+  color: #333;
+  padding: 30rpx 0;
+}
+
+.result .h5 {
+  font-size: 30rpx;
+  color: #666;
+  line-height: 50rpx;
+}

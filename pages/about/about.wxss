@@ -8,7 +8,7 @@ page {
 .title1 {
 	font-size: 34rpx;
 	text-align:center;
-	padding: 80rpx 0;
+	padding: 50rpx 0;
 }
 
 .a-c {

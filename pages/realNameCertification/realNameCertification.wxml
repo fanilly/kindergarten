@@ -28,7 +28,7 @@
             <image src="../../assets/cer_icon02.png" style="width:36rpx;height:39rpx;"></image>
           </view>
           <view class="f28">
-            <input placeholder-style="color:#fff" value="{{curInfo.IDNumber}}" name="IDNumber" placeholder="请输入真实身份证号" />
+            <input placeholder-style="color:#fff" value="{{curInfo.IDNumber}}" type="idcard" name="IDNumber" placeholder="请输入真实身份证号" />
           </view>
         </view>
         <!-- 手机号 -->

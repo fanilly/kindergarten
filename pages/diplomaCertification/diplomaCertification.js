@@ -52,6 +52,7 @@ Page({
             desc: diploma.data6
           };
           this.setData({
+            descLen:diploma.data6.length,
             loaded: true,
             curDiplomaIndex: this.data.diploma.indexOf(diploma.data1),
             curYearIndex: this.data.years.indexOf(diploma.data5),

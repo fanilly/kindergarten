@@ -42,9 +42,10 @@ App({
             key: 'IDENTITY',
             data: data.roleType
           });
-          wx.switchTab({
-            url: `/pages/index/index`
-          });
+          if (this.testSwitchTab) this.testSwitchTab();
+          // wx.switchTab({
+          //   url: `/pages/index/index`
+          // });
         } else {
           console.log('-------- 成功获取到信息');
           if (this.getUserInfoSuccessCallback) this.getUserInfoSuccessCallback();
@@ -62,10 +63,15 @@ App({
       }
     });
   },
-  onLaunch() {
-    wx.showLoading({ title: '身份识别中', mask: true });
-    console.log('-------- 开始登陆');
-    this.loginIn();
+  onLaunch(e) {
+    if (e.path == 'pages/grab/grab') {
+
+    } else {
+      wx.showLoading({ title: '身份识别中', mask: true });
+      console.log('-------- 开始登陆');
+      this.loginIn();
+    }
+
   },
   globalData: {
     webUserInfo: null, //服务器端的用户信息

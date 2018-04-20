@@ -90,6 +90,10 @@ page {
   background-color: #fd6a70;
 }
 
+.b-bg {
+  background-color: #546c84;
+}
+
 .gray01 {
   color: #353535;
 }
@@ -151,6 +155,7 @@ page {
   background-color: #fff;
   box-shadow: 0 0 8px rgba(153, 153, 153, .6);
   overflow: hidden;
+  position: relative;
 }
 
 .order-list .lside {

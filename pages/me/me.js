@@ -1,5 +1,5 @@
 // pages/me/me.js
-import { DISABLE_RECHARGE } from '../../config.js';
+import { DISABLE_RECHARGE, USER_INFO_URL } from '../../config.js';
 const app = getApp();
 Page({
 
@@ -18,8 +18,47 @@ Page({
 
   },
 
+  // 下拉刷新
+  onPullDownRefresh: function() {
+    wx.stopPullDownRefresh();
+    wx.showNavigationBarLoading();
+    wx.request({
+      url: USER_INFO_URL,
+      data: {
+        userId: app.globalData.userID
+      },
+      success: res => {
+        let datas = res.data.data;
+        app.globalData.webUserInfo = datas;
+        wx.setStorage({
+          key: 'IDENTITY',
+          data: datas.roleType
+        });
+        this.setData({
+          webUserInfo: datas
+        });
+        wx.hideLoading();
+        this.verfInfo();
+        console.log('-------- 成功更新本地，该用户已实名认证');
+        wx.hideNavigationBarLoading();
+      },
+      fail: err => {
+        wx.hideLoading();
+        wx.showToast({
+          title: `网络异常`,
+          image: '../../assets/warning.png',
+          duration: 1500
+        });
+      }
+    });
+  },
+
   // 生命周期函数--监听页面显示
   onShow() {
+    this.verfInfo();
+  },
+
+  verfInfo() {
     let lv = '..',
       btns,
       cerBtns,

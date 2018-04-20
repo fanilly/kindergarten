@@ -34,6 +34,13 @@ Page({
 
   },
 
+  // 下拉刷新
+  onPullDownRefresh: function() {
+    wx.stopPullDownRefresh();
+    wx.showNavigationBarLoading();
+    this.renderTaskCalendar(this.data.curYear, this.data.curMonth);
+  },
+
   renderTaskCalendar(year, month) {
     wx.showLoading({ title: '加载中', mask: true });
     tasks = [];
@@ -54,6 +61,7 @@ Page({
           curYear: year,
           curMonth: month
         });
+        wx.hideNavigationBarLoading();
         wx.hideLoading();
       }
     });

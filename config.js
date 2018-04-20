@@ -7,6 +7,7 @@
 
 const HOST = 'tzn.honghuseo.cn',
   API = `https://${HOST}/index.php/api`,
+  SIGN_UP = `https://${HOST}/index.php/baoming`,
   CONFIG = {
 
     //禁用押金
@@ -60,8 +61,17 @@ const HOST = 'tzn.honghuseo.cn',
     //提现
     CASH_URL: `${API}/user/cash`,
 
-    //提现
+    //历史任务列表
     OLD_TASK_URL: `${API}/task/oldTask`,
+
+    //某活动下的人物列表
+    TASK_URL: `${API}/task/taskList`,
+
+    //报名页面活动详情
+    SIGN_UP_ACTIVE_URL: `${SIGN_UP}/index/index`,
+
+    //报名页面活动支付
+    SIGN_UP_PAY_URL: `${SIGN_UP}/index/pay`
 
   };
 

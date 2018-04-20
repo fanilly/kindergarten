@@ -1,0 +1,8 @@
+<!--pages/result/result.wxml-->
+<view class="result">
+  <!-- <img src="images/success.png"> -->
+  <image src="../../assets/{{flag ? 'success_ad' : 'warning_ad'}}.png"></image>
+  <!-- <h1>支付成功</h1> -->
+  <view class="h1">{{flag ? '支付成功' : '支付失败'}}</view>
+  <!-- <view class="h5">内容详情，可根据世纪需要来安排，如果换行则不超过规定长度，居中显示</view> -->
+</view>

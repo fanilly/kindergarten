@@ -28,8 +28,31 @@
   width: 33.33%;
   float: left;
   overflow:hidden;
+  position: relative;
+  padding-bottom: 20rpx;
+  margin-top: 20rpx;
 }
 
-.tb-btns .tb-btns-item:nth-child(3) image{
+.tb-btns .tb-btns-item .choose {
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  padding-top: 80rpx;
+  font-size: 28rpx;
+  color:#fff;
+}
+
+.tb-btns .tb-btns-item .choose image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 15rpx auto;
+}
+
+.tb-btns .tb-btns-item:nth-child(3) .line{
 	display: none;
 }

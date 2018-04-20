@@ -22,7 +22,8 @@ Page({
     wx.request({
       url: TASK_INFO_URL,
       data: {
-        activeId: activeId
+        activeId: activeId,
+        userId:app.globalData.userID
       },
       success: res => {
         console.log(res);

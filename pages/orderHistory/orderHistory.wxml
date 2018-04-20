@@ -3,52 +3,64 @@
   <view class="evaluation-content">
     <navigator url="/" hover-class="none">
       <image src="../../assets/me_icon06.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
-      <view class="f28 main-color align-center">666</view>
+      <view class="f28 main-color align-center">{{webUserInfo.good}}</view>
       <image src="../../assets/line.png" class="line"></image>
     </navigator>
     <navigator url="/" hover-class="none">
-      <view class="f60 b-color align-center mt46">98%</view>
+      <view class="f60 b-color align-center mt46">{{webUserInfo.appriases}}%</view>
       <view class="f24 gray06 align-center">综合满意度</view>
       <image class="line" src="../../assets/line.png"></image>
     </navigator>
     <navigator url="/" hover-class="none">
       <image src="../../assets/me_icon07.png" style="width:84rpx;height: 84rpx;margin-top: 30rpx"></image>
-      <view class="f28 red-color align-center">12</view>
+      <view class="f28 red-color align-center">{{webUserInfo.bad}}</view>
     </navigator>
   </view>
 </view>
+<block wx:if="{{loadingStatus == 1}}">
+  <view class="loading-layer">
+    <image class="weui-loading test" src="../../assets/timg.png" style="width: 260rpx;height: 195rpx;"></image>
+    <view class="f28 gray06">加载中</view>
+  </view>
+</block>
+<view class="no-data" wx:if="{{loadingStatus == 0}}">
+  <image src="../../assets/null.png" style="width:191rpx;height: 197rpx;"></image>
+  <view class="f24 gray06">暂无历史订单</view>
+</view>
 <!-- 列表项 -->
-<view class="oh-wapper">
-  <block wx:for="123456789" wx:key="{{index}}">
-    <navigator url="../orderHistoryDetail/orderHistoryDetail" class="oh-list">
+<view class="oh-wapper" wx:if="{{loadingStatus == 2}}">
+  <block wx:for="{{lists}}" wx:key="{{index}}">
+    <navigator url="../orderHistoryDetail/orderHistoryDetail?taskID={{item.activeId}}" class="oh-list">
       <view class="lside">
-        <view class="oh-title f28 b-color">皮尔特沃夫
-          <text class="f24">2018-02-04</text>
+        <view class="oh-title f28 b-color">{{item.activeName}}
+          <text class="f24">{{item.getTime}}</text>
         </view>
         <view class="oh-content">
           <view>
             <image src="../../assets/list_icon02.png" style="width:40rpx;height:34rpx"></image>
-            <text>5天</text>
+            <text>{{item.activeDays}}天</text>
           </view>
           <view>
             <image src="../../assets/list_icon03.png" style="width:40rpx;height:34rpx"></image>
-            <text>48人</text>
+            <text>{{item.childNum}}人</text>
           </view>
           <view>
             <image src="../../assets/list_icon04.png" style="width:40rpx;height:34rpx"></image>
-            <text>2018-01-12</text>
+            <text>{{item.getTime}}</text>
           </view>
         </view>
       </view>
       <view class="rside">
         <view>
-          <image src="../../assets/me_icon06.png" style="width:48rpx;height: 48rpx;"></image>
+          <image wx:if="{{item.taskStatus == 2}}" src="../../assets/{{item.score*1 > 5 ? 'me_icon06' : 'me_icon07'}}.png" style="width:48rpx;height: 48rpx;position: relative;top:{{item.score*1 > 5 ? '0' : '6rpx'}};"></image>
         </view>
-        <view class="f36 main-color">10</view>
+        <view wx:if="{{item.taskStatus == 2}}" class="f36 {{item.score*1 > 5 ? 'main-color' : 'red-color'}}">{{item.score}}</view>
+        <view wx:if="{{item.taskStatus == 1}}" class="f28 main-color" style="width: 120rpx;">进行中</view>
         <view>
           <image src="../../assets/arrow.png" style="width:32rpx;height: 46rpx;"></image>
         </view>
       </view>
     </navigator>
   </block>
+  <text class="f28 gray06 text-center remark">已加载全部数据</text>
 </view>

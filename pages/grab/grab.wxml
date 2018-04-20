@@ -1,0 +1,47 @@
+<!--pages/realNameCertification/realNameCertification.wxml-->
+<!-- 背景图 -->
+<image src="../../assets/certification_bg.png" class="certification-bg"></image>
+<scroll-view class="cer-content" scroll-y>
+  <view class="wapper">
+    <!-- 表单内容 -->
+    <form bindsubmit="handleFormSubmit">
+      <view class="inputs-wapper">
+        <!-- <view class="lg-title">活动支付</view> -->
+        <!-- 活动信息 -->
+        <view class="xs-title">一、活动信息</view>
+        <view class="item">活动单位：{{content.schoolName}}</view>
+        <view class="item">活动时间：{{content.activeTime}}</view>
+        <view class="item">活动地点：{{content.gardenName}}</view>
+        <view class="item">活动费用：{{content.money}}元</view>
+        <view class="item">活动总人数：{{content.totalNum}}</view>
+        <view class="item">儿童人数：{{content.childNum}}</view>
+        <!-- 基础信息 -->
+        <view class="xs-title">一、基础信息</view>
+        <view class="item-input">
+          <view>
+            <image src="../../assets/icon_02.png" style="width: 30rpx;height: 30rpx;"></image>
+          </view>
+          <view>姓名：</view>
+          <view>
+            <input placeholder-style="color:#fff" name="yourName" placeholder="请输入您的姓名" />
+          </view>
+        </view>
+        <view class="item-input">
+          <view>
+            <image src="../../assets/icon_01.png" style="width: 30rpx;height: 30rpx;"></image>
+          </view>
+          <view>电话：</view>
+          <view>
+            <input placeholder-style="color:#fff" name="phone" type="number" placeholder="请输入您的联系电话" />
+          </view>
+        </view>
+        <!-- 用户协议 -->
+        <view class="agreement">注：点击提交暨表示已阅读并同意
+          <navigator class="y-color" url="../agreement/agreement">《用户协议》</navigator>
+        </view>
+        <!-- 提交 -->
+        <button formType="submit" class="subbtn">提交</button>
+      </view>
+    </form>
+  </view>
+</scroll-view>

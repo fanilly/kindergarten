@@ -1,0 +1,113 @@
+/* pages/realNameCertification/realNameCertification.wxss */
+
+.certification-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.cer-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  position: relative;
+}
+
+.wapper {
+  padding-top: 36rpx;
+}
+
+.agreement {
+  margin-top: 24rpx;
+}
+
+.agreement navigator {
+  display: inline-block;
+}
+
+.subbtn {
+  margin-top: 60rpx;
+  height: 80rpx;
+  background-image: linear-gradient(to right, #0eaf9c, #00ad99);
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 0 40rpx rgba(54, 138, 132, .75);
+  line-height: 80rpx;
+}
+
+.lg-title {
+  font-weight: normal;
+  font-size: 50rpx;
+  text-align: center;
+  color: #e6f18b;
+  margin-top: 10rpx;
+}
+
+.xs-title {
+  font-weight: normal;
+  font-size: 36rpx;
+  color: #e6f18b;
+  margin: 45rpx 0 10rpx;
+}
+
+.inputs-wapper {
+  padding: 10px;
+}
+
+.item {
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  padding-left: 15rpx;
+}
+
+.item-input {
+  font-size: 30rpx;
+  color: #fff;
+  display: flex;
+  line-height: 50rpx;
+  margin-top: 30rpx;
+  padding: 0 15rpx;
+  align-items: center;
+}
+
+.item-input view:first-child {
+  width: 30rpx;
+}
+
+.item-input view:nth-child(2) {
+  padding-left: 15rpx;
+}
+
+.item-input view:last-child {
+  flex: 1;
+}
+
+.item-input view:last-child input {
+  width: 100%;
+  border: 0;
+  background-color: rgba(84, 108, 132, 1);
+  line-height: 80rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+  color: #fff;
+}
+
+.agreement {
+  font-size: 26rpx;
+  color: #b3c0c9;
+  line-height: 38rpx;
+  padding-top: 22rpx;
+}
+
+.agreement navigator {
+  color: #e6f18b;
+}
