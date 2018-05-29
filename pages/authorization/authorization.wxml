@@ -1,0 +1,11 @@
+<!--pages/authorization/authorization.wxml-->
+<view class="container" wx:if="{{showModal}}">
+	<view class="content">
+		<view class="title">
+			<view class="h1">温馨提示</view>
+			<view class="h2">抢单联盟申请获取以下权限</view>
+			<view class="h3"><text></text>获取你的公开信息（昵称、头像）</view>
+		</view>
+		<button class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">开始授权</button>
+	</view>
+</view>

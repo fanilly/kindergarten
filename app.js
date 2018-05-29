@@ -67,9 +67,9 @@ App({
     if (e.path == 'pages/grab/grab') {
 
     } else {
-      wx.showLoading({ title: '身份识别中', mask: true });
+      // wx.showLoading({ title: '身份识别中', mask: true });
       console.log('-------- 开始登陆');
-      this.loginIn();
+      // this.loginIn();
     }
 
   },
