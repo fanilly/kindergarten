@@ -68,6 +68,13 @@
   transition: all ease .6s;
 }
 
+.ad-remark {
+  font-size: 24rpx;
+  color: #999;
+  padding: 0 40rpx;
+  margin: -25rpx 0 20rpx;
+}
+
 .return-deposit {
   position: fixed;
   width: 92%;

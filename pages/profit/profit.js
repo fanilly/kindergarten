@@ -68,49 +68,64 @@ Page({
           showCancel: false
         });
       } else {
-        wx.showLoading({ title: '提交中', mask: true });
-        wx.request({
-          header: { 'content-type': 'application/x-www-form-urlencoded' },
-          method: 'POST',
-          url: CASH_URL,
-          data: {
-            userId: app.globalData.userID,
-            money: money
-          },
-          success: res => {
-            wx.hideLoading();
-            console.log(app.globalData.userID, money);
-            if (res.data.status == 1) {
-              wx.showModal({
-                content: '恭喜你提现成功，提现金额将在24小时之内发放至您的账户',
-                showCancel: false,
-                success: res => {
-                  if (res.confirm) {
-                    wx.switchTab({
-                      url: '../me/me'
-                    });
-                  }
-                }
-              });
-              app.globalData.webUserInfo.commission = app.globalData.webUserInfo.commission * 1 - money * 1;
-            } else {
-              wx.showToast({
-                title: '提现失败',
-                image: '../../assets/warning.png',
-                duration: 1500
-              });
+        wx.showModal({
+          title: '温馨提示',
+          content: '提现需要收取1%手续费',
+          confirmText:'继续提现',
+          cancelText:'取消',
+          success: (res) => {
+            if (res.confirm) {
+              this.withdrawCash();
             }
-          },
-          fail() {
-            wx.showToast({
-              title: '网络异常',
-              image: '../../assets/warning.png',
-              duration: 1500
-            });
           }
         });
       }
     }
+  },
+
+  //提现
+  withdrawCash() {
+    wx.showLoading({ title: '提交中', mask: true });
+    wx.request({
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      method: 'POST',
+      url: CASH_URL,
+      data: {
+        userId: app.globalData.userID,
+        money: money
+      },
+      success: res => {
+        wx.hideLoading();
+        console.log(app.globalData.userID, money);
+        if (res.data.status == 1) {
+          wx.showModal({
+            content: '恭喜你提现成功，提现金额将在24小时之内发放至您的账户',
+            showCancel: false,
+            success: res => {
+              if (res.confirm) {
+                wx.switchTab({
+                  url: '../me/me'
+                });
+              }
+            }
+          });
+          app.globalData.webUserInfo.commission = app.globalData.webUserInfo.commission * 1 - money * 1;
+        } else {
+          wx.showToast({
+            title: '提现失败',
+            image: '../../assets/warning.png',
+            duration: 1500
+          });
+        }
+      },
+      fail() {
+        wx.showToast({
+          title: '网络异常',
+          image: '../../assets/warning.png',
+          duration: 1500
+        });
+      }
+    });
   },
 
   //充值提现

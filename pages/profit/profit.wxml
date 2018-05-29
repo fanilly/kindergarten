@@ -63,6 +63,7 @@
   <view class="input-wapper b-color">
     <input placeholder-style="color:#8fa4a2" type="number" bindinput="handleRecordMoeny" placeholder="{{isRecharge?'输入充值金额':'输入提现金额'}}" />
   </view>
+  <view class="ad-remark" wx:if="{{!isRecharge}}">注：提现需要收取1%手续费</view>
   <view class="btn" bindtap="handleConfirm">{{isRecharge?'确认充值':'确认提现'}}</view>
   <view class="close" bindtap="handleClosePopup">
     <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
