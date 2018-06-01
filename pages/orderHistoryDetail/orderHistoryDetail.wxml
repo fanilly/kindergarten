@@ -26,6 +26,13 @@
         <view class="f28 gray01">活动报酬：</view>
         <view class="f40 red-color">￥{{datas.task.taskComm}}</view>
       </view>
+      <view class="c-order-item" wx:if="{{webUserInfo.roleType == 2}}">
+        <view>
+          <image src="../../assets/c_icon11.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
+        </view>
+        <view class="f28 gray01">司机需求：</view>
+        <view class="f26 gray02">需要{{datas.carNum}}辆车，{{datas.driverNum}}个司机</view>
+      </view>
       <view class="c-order-item">
         <view>
           <image src="../../assets/c_icon09.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
@@ -57,7 +64,7 @@
       </view>
     </view>
     <view class="tb-content">
-      幼儿园春季出行活动，全天续要五个活动，幼儿园自行才艺展示活动、庄园特色活动、科普教育活动...，其中体智能教练需要负责协调庄园特色活动、注释科普教育活动、以及安排游戏活动的内容。
+      {{datas.activeDesc}}
     </view>
   </view>
   <!-- 教练需求 -->

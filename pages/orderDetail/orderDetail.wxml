@@ -25,6 +25,13 @@
         <view class="f28 gray01">活动报酬：</view>
         <view class="f40 red-color">￥{{taskComm}}</view>
       </view>
+      <view class="c-order-item" wx:if="{{webUserInfo.roleType == 2}}">
+        <view>
+          <image src="../../assets/c_icon11.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
+        </view>
+        <view class="f28 gray01">司机需求：</view>
+        <view class="f26 gray02">需要{{datas.carNum}}辆车，{{datas.driverNum}}个司机</view>
+      </view>
       <view class="c-order-item">
         <view>
           <image src="../../assets/c_icon09.png" style="height: 36rpx;width:36rpx;position: relative;top:-2rpx;"></image>
